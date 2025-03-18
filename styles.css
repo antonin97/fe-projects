@@ -1,0 +1,146 @@
+:root {
+    font-size: 16px;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Montserrat", sans-serif;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto 1fr auto auto;
+    grid-template-areas: 
+        "h h h"
+        "m m m"
+        "s s s"
+        "f f f";
+}
+
+/* Header */
+
+header {
+    background-color: black;
+    color: white;
+    display: flex;
+    grid-area: h;
+    align-items: center;
+}
+
+.main-logo {
+    background-color: #FFE600;
+    padding: 2.5em 0.3em 0;
+}
+
+.navbar {
+    display: flex;
+    padding: 0;
+    justify-content: space-around;
+}
+
+.navbar-item {
+    padding-left: 2em;
+    text-transform: lowercase;
+    list-style-type: none;
+}
+
+.navbar-link {
+    text-decoration: none;
+    color: #FFFFFF;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+/* Main area */
+
+main {
+    grid-area: m;
+    background-image: url("./img/hero-bg.jpg");
+    color: white;
+    padding: 7em 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.main-title {
+    width: 50%;
+}
+
+.main-text {
+    width: 50%;
+    font-size: 1.2rem;
+    line-height: 1.8em;
+    padding: 1em 0;
+}
+
+.main-btn {
+    background-color: #FFE600;
+    color: black;
+    padding: 1em 2em;
+    font-weight: bold;
+    align-self: flex-start;
+
+}
+
+.yellow {
+    color: #FFE600;
+}
+
+.strong {
+    font-weight: bold;
+}
+
+/* Sections */
+
+.section-wrapper {
+    grid-area: s;
+    display: flex;
+    background-color: white;
+}
+
+section {
+    flex: 1;
+}
+
+/* Footer */
+
+footer {
+    grid-area: f;
+    background-color: #EBEBEB;
+    color: rgba(0, 0, 0, 0.37);
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-template-areas: 
+        "fl ."
+        "ft l"
+        "c .";
+    grid-column-gap: 30em;
+    justify-content: space-between;
+    padding: 4em 0;
+
+
+}
+
+.footer-logo {
+    opacity: 0.37;
+    grid-area: fl;
+}
+
+.copyright {
+    font-size: 0.8rem;
+    grid-area: c;
+}
+
+.footer-text {
+    grid-area: ft;
+    margin: 0.5em 0 2em 0;
+    line-height: 1.3em;
+
+}
+
+.logos {
+    grid-area: l;
+}
+
+
+
+
