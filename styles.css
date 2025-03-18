@@ -6,29 +6,35 @@ body {
     margin: 0;
     padding: 0;
     font-family: "Montserrat", sans-serif;
+    display: flex;
+    flex-direction: column;
+}
+
+.background-container {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: auto 1fr auto auto;
-    grid-template-areas: 
+    grid-template-areas:
         "h h h"
-        "m m m"
-        "s s s"
-        "f f f";
+        "m m m";
+    background-image: url("./img/hero-bg.jpg");
+    background-size: cover;
+    background-position: center;
 }
 
 /* Header */
 
 header {
-    background-color: black;
     color: white;
     display: flex;
     grid-area: h;
     align-items: center;
+    padding: 0 6em;
 }
 
 .main-logo {
     background-color: #FFE600;
-    padding: 2.5em 0.3em 0;
+    padding: 3em 0.3em 0;
 }
 
 .navbar {
@@ -48,25 +54,31 @@ header {
     color: #FFFFFF;
     font-size: 0.8rem;
     font-weight: bold;
+    padding: 0.2em 0;
+}
+
+.yellow-underline {
+    border-bottom: solid 2px #FFE600;
 }
 
 /* Main area */
 
 main {
     grid-area: m;
-    background-image: url("./img/hero-bg.jpg");
+    
+
     color: white;
-    padding: 7em 0;
+    padding: 9em 6em;
     display: flex;
     flex-direction: column;
 }
 
 .main-title {
-    width: 50%;
+    width: 40%;
 }
 
 .main-text {
-    width: 50%;
+    width: 40%;
     font-size: 1.2rem;
     line-height: 1.8em;
     padding: 1em 0;
@@ -95,10 +107,36 @@ main {
     grid-area: s;
     display: flex;
     background-color: white;
+    padding: 3.5em 6em;
+    justify-content: space-between;
+    gap: 10%;
 }
 
 section {
     flex: 1;
+    text-align: center;
+}
+
+.section-title {
+    display: inline-block;
+    position: relative;
+    padding-bottom: 1em;
+    font-size: 1.2rem;
+}
+
+h2::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 60%;
+    height: 3px;
+    background-color: #FFE600;;
+    transform: translateX(-50%);
+}
+
+.section-text {
+    line-height: 1.8em;
 }
 
 /* Footer */
@@ -115,7 +153,7 @@ footer {
         "c .";
     grid-column-gap: 30em;
     justify-content: space-between;
-    padding: 4em 0;
+    padding: 4em 6em;
 
 
 }
