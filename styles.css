@@ -1,5 +1,6 @@
 :root {
     font-size: 16px;
+    --padding-lr: 10%;
 }
 
 body {
@@ -19,7 +20,7 @@ body {
         "m m m";
     background-image: url("./img/hero-bg.jpg");
     background-size: cover;
-    background-position: center;
+    background-position: 60%;
 }
 
 /* Header */
@@ -29,12 +30,16 @@ header {
     display: flex;
     grid-area: h;
     align-items: center;
-    padding: 0 6em;
+    padding: 0 var(--padding-lr);
 }
 
 .main-logo {
     background-color: #FFE600;
     padding: 3em 0.3em 0;
+}
+
+.burger-menu {
+    display: block
 }
 
 .navbar {
@@ -65,20 +70,18 @@ header {
 
 main {
     grid-area: m;
-    
-
     color: white;
-    padding: 9em 6em;
+    padding: 5em var(--padding-lr);
     display: flex;
     flex-direction: column;
 }
 
 .main-title {
-    width: 40%;
+    width: 75%;
 }
 
 .main-text {
-    width: 40%;
+    width: 75%;
     font-size: 1.2rem;
     line-height: 1.8em;
     padding: 1em 0;
@@ -106,10 +109,11 @@ main {
 .section-wrapper {
     grid-area: s;
     display: flex;
+    flex-direction: column;
     background-color: white;
-    padding: 3.5em 6em;
+    padding: 3.5em var(--padding-lr);
     justify-content: space-between;
-    gap: 10%;
+    gap: 7%;
 }
 
 section {
@@ -146,14 +150,13 @@ footer {
     background-color: #EBEBEB;
     color: rgba(0, 0, 0, 0.37);
     display: grid;
-    grid-template-columns: 3fr 1fr;
     grid-template-areas: 
-        "fl ."
-        "ft l"
-        "c .";
-    grid-column-gap: 30em;
-    justify-content: space-between;
-    padding: 4em 6em;
+        "l"
+        "fl"
+        "ft"
+        "c";
+    text-align: center;
+    padding: 4em var(--padding-lr);
 
 
 }
@@ -161,6 +164,7 @@ footer {
 .footer-logo {
     opacity: 0.37;
     grid-area: fl;
+    margin: 2em auto 1em;
 }
 
 .copyright {
@@ -177,8 +181,57 @@ footer {
 
 .logos {
     grid-area: l;
+    min-width: max-content;
+    font-size: 2rem;
+    margin: 0 10px;
+    text-decoration: none;
 }
 
+.social-icon {
+    color: black;
+}
+
+
+@media (min-width:600px) {
+    .section-wrapper {
+            flex-direction: row;
+    }
+
+    .main-title {
+        width: 60%;
+    }
+
+    .main-text {
+        width: 60%;
+    }
+
+    footer {
+
+        grid-template-columns: 3fr 1fr;
+        grid-template-areas:
+                    "fl ."
+                    "ft l"
+                    "c .";
+        grid-column-gap: 20%;
+        justify-content: space-between;
+        text-align: left;
+    }
+
+    .footer-logo {
+        opacity: 0.37;
+        grid-area: fl;
+        margin: 2em 0 1em;
+    }
+
+    .logos {
+        text-align: right;
+    }
+
+    main {
+        padding: 9em var(--padding-lr)
+    }
+
+}
 
 
 
