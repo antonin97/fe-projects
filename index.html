@@ -14,9 +14,10 @@
     <div class="background-container">
         <header>
             <img class="main-logo" src="./img/logo.png" alt="company logo"/>
+            <button class="burger-menu open-nav" id="burger-menu">&#9776;</button>
             <nav>
-                <button class="burger-menu" id="burger-menu">&#9776;</button>
-                <ul id="navbar" class="navbar">
+                <a class="close-nav">✖</a>
+                <ul class="navbar">
                     <li class="navbar-item"><a class="navbar-link" href="#">About</a></li>
                     <li class="navbar-item"><a class="navbar-link" href="#">Contact</a></li>
                     <li class="navbar-item"><a class="navbar-link yellow-underline" href="#">Home</a></li>
@@ -58,11 +59,7 @@
         </div>
     </footer>
 
-    <script>
-        document.getElementById("burger-menu").addEventListener("click", function () {
-        document.getElementById("navbar").classList.toggle("show");
-        });
-    </script>
+    <script src="./script.js"></script>
 </body>
 </html>
 

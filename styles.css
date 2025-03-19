@@ -47,34 +47,62 @@ header {
     padding: 0;
 }
 
+.close-nav {
+    color: #FFE600;
+    font-size: 3rem;
+    position: fixed;
+    top: 5%;
+    left: 5%;
+    cursor: pointer;
+}
+
 nav {
-    display: flex;
-    justify-content: flex-end;
+    display: none;
+    justify-content: center;
     align-items: center;
 }
 
+.navigation-open {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
+    position: fixed;
+    background: #000;
+    width: 100%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 10;
+    opacity: 95%;
+}
+
 .navbar {
-    display: none;
     padding: 0;
-    justify-content: space-around;
 }
 
 .navbar-item {
-    padding-left: 2em;
     text-transform: lowercase;
+    padding: 3em;
     list-style-type: none;
+}
+
+.navbar-link:hover {
+    color: #FFE600;
 }
 
 .navbar-link {
     text-decoration: none;
     color: #FFFFFF;
-    font-size: 0.8rem;
+    font-size: 3rem;
     font-weight: bold;
     padding: 0.2em 0;
 }
 
 .yellow-underline {
-    border-bottom: solid 2px #FFE600;
+    border-bottom: none;
 }
 
 /* Main area */
@@ -88,11 +116,11 @@ main {
 }
 
 .main-title {
-    width: 75%;
+    width: 70%;
 }
 
 .main-text {
-    width: 75%;
+    width: 70%;
     font-size: 1.2rem;
     line-height: 1.8em;
     padding: 1em 0;
@@ -220,6 +248,48 @@ footer {
         width: 60%;
     }
 
+    .yellow-underline {
+        border-bottom: solid 2px #FFE600;
+    }
+
+    nav {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+
+    .navbar {
+        padding: 0;
+        justify-content: space-around;
+    }
+
+    .close-navbar {
+        display: none;
+    }
+
+    .close-nav {
+        display: none;
+    }
+
+    .navbar-item {
+
+        padding: 0 0 0 2.5em;
+        text-transform: lowercase;
+        list-style-type: none;
+    }
+
+    .navbar-link {
+        text-decoration: none;
+        color: #FFFFFF;
+        font-size: 1.2rem;
+        font-weight: bold;
+        padding: 0.2em 0;
+    }
+
+    .close-navbar {
+        display: none;
+    }
+
     footer {
 
         grid-template-columns: 3fr 1fr;
@@ -247,7 +317,12 @@ footer {
     }
 
     header {
+        color: white;
+        display: flex;
         justify-content: flex-start;
+        grid-area: h;
+        align-items: center;
+        padding: 0 var(--padding-lr);
     }
 
     .burger-menu {
@@ -257,7 +332,6 @@ footer {
     .navbar {
         display: flex;
     }
-
 }
 
 
