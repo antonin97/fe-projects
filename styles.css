@@ -1,14 +1,12 @@
 :root {
     font-size: 16px;
-    --padding-lr: 10%;
+    --padding-lr: 5%;
 }
 
 body {
     margin: 0;
     padding: 0;
     font-family: "Montserrat", sans-serif;
-    display: flex;
-    flex-direction: column;
 }
 
 .background-container {
@@ -30,6 +28,7 @@ header {
     display: flex;
     grid-area: h;
     align-items: center;
+    justify-content: space-between;
     padding: 0 var(--padding-lr);
 }
 
@@ -39,11 +38,23 @@ header {
 }
 
 .burger-menu {
-    display: block
+    display: block;
+    font-size: 2rem;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    padding: 0;
+}
+
+nav {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
 }
 
 .navbar {
-    display: flex;
+    display: none;
     padding: 0;
     justify-content: space-around;
 }
@@ -193,6 +204,10 @@ footer {
 
 
 @media (min-width:600px) {
+
+    :root {
+            --padding-lr: 10%;
+        }
     .section-wrapper {
             flex-direction: row;
     }
@@ -229,6 +244,18 @@ footer {
 
     main {
         padding: 9em var(--padding-lr)
+    }
+
+    header {
+        justify-content: flex-start;
+    }
+
+    .burger-menu {
+        display: none;
+    }
+
+    .navbar {
+        display: flex;
     }
 
 }
