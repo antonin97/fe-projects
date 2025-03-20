@@ -149,12 +149,10 @@ main {
 
 .section-wrapper {
     grid-area: s;
-    display: flex;
-    flex-direction: column;
+    display: grid;
     background-color: white;
     padding: 3.5em var(--padding-lr);
     justify-content: space-between;
-    gap: 7%;
 }
 
 section {
@@ -239,7 +237,8 @@ footer {
             --padding-lr: 10%;
         }
     .section-wrapper {
-            flex-direction: row;
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: 7%;
     }
 
     .main-title {

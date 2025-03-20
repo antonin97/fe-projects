@@ -54,6 +54,34 @@ section {
 }
 
 
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label, input {
+    display: block;
+}
+
+input,
+textarea {
+    box-sizing: border-box;
+    width: 100%;
+    border: 1px solid black;
+    resize: none;
+    margin-bottom: 1em;
+    font-size: 1rem;
+    padding: 0.5em;
+    font-family: "Montserrat", sans-serif;
+}
+
+.send-btn {
+    padding: 1em 3em;
+    align-self: flex-end;
+    margin-top: 2em;
+}
+
 @media (min-width:600px) {
 
 
@@ -61,4 +89,20 @@ section {
         padding-top: 4em;
         padding-bottom: 0em;
     }
+
+    .section-wrapper {
+        grid-template-columns: 1fr;
+        column-gap: 7%;
+    }
+    
+
+}
+
+@media (min-width: 850px) {
+    .section-art-one {
+            grid-column: 2 / 4;
+    }
+
+
+
 }
