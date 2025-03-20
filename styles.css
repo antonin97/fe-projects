@@ -49,10 +49,10 @@ header {
 
 .close-nav {
     color: #FFE600;
-    font-size: 3rem;
+    font-size: 5rem;
     position: fixed;
-    top: 5%;
-    left: 5%;
+    top: 0px;
+    left: 20px;
     cursor: pointer;
 }
 
