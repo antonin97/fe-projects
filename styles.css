@@ -50,19 +50,15 @@ header {
 .close-nav {
     color: #FFE600;
     font-size: 5rem;
-    position: fixed;
+    position: absolute;
     top: 0px;
-    left: 20px;
+    left: 10px;
     cursor: pointer;
 }
 
-nav {
-    display: none;
-    justify-content: center;
-    align-items: center;
-}
 
-.navigation-open {
+
+nav {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -74,9 +70,15 @@ nav {
     top: 0;
     right: 0;
     bottom: 0;
-    left: 0;
+    left: 100%;
     z-index: 10;
     opacity: 95%;
+    transition: transform 250ms;
+}
+
+.navigation-open {
+    transform: translateX(-100%);
+
 }
 
 .navbar {
@@ -255,16 +257,15 @@ footer {
     nav {
         display: flex;
         justify-content: flex-end;
+        flex-direction: row;
         align-items: center;
+        position: static;
     }
+
 
     .navbar {
         padding: 0;
         justify-content: space-around;
-    }
-
-    .close-navbar {
-        display: none;
     }
 
     .close-nav {

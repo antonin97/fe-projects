@@ -1,0 +1,64 @@
+header {
+    background-color: black;
+}
+
+.background-container {
+    background-color: white;
+    background-image: none;
+}
+
+main {
+    color: black;
+    text-align: center;
+    align-items: center;
+    padding-top: 4em;
+    padding-bottom: 0em;;
+
+}
+
+.main-title {
+    font-size: 3rem;
+    margin: 0;
+}
+
+.main-text {
+    margin: 0;
+    width: 80%
+}
+
+h2::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0%;
+    width: 60%;
+    height: 3px;
+    background-color: #FFE600;
+    transform: translateX(0%);
+}
+
+.section-wrapper {
+    padding-top: 0;
+}
+
+.about-me-img {
+    padding: 2em 0;
+}
+
+section {
+    text-align: left;
+}
+
+.img-section {
+    text-align: center
+}
+
+
+@media (min-width:600px) {
+
+
+    main {
+        padding-top: 4em;
+        padding-bottom: 0em;
+    }
+}
