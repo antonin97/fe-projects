@@ -134,6 +134,7 @@ main {
     padding: 1em 2em;
     font-weight: bold;
     align-self: flex-start;
+    cursor:pointer
 
 }
 
