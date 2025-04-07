@@ -171,10 +171,8 @@ class App {
         if (!colorOption) return;
         const currentNote = e.target.closest('.note')
         
-        // Get the selected color
         const selectedColor = colorOption.style.backgroundColor;
         
-        // Optional: Store color in your notes data
         const noteId = currentNote.dataset.id;
         this.notes = this.notes.map(note => {
             if (Number(note.id) === Number(noteId)) {
@@ -183,16 +181,13 @@ class App {
             return note;
         })
 
-        // Close toolbox
         currentNote.querySelector('.toolbox').classList.remove('toolbox-opened');
-
         this.render()
     }
 
 
 
-    render() {
-        
+    render() { 
         const noteList = this.notes.map(note => {
             return `<div class="note" data-id="${note.id}" style="background-color: ${note.color || 'white'}">
                         <h2>${note.title}</h2>
@@ -218,10 +213,8 @@ class App {
                         </div>
                     </div>`
         })
-
         this.$notesContainer.innerHTML = noteList.join("")
     }
 }
-
 
 new App();
