@@ -56,16 +56,18 @@ h1 {
     border: none;
 }
 
+.note-title-opened {
+    display: block;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+
 .note-title:active, .note-title:focus {
     outline: none;
 }
 
 
-.input-opened {
-    display: block;
-    border-bottom-left-radius: 0px;
-    border-bottom-right-radius: 0px;
-}
+
 
 .note-text-container {
     background: white;

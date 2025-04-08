@@ -1,8 +1,6 @@
 class App {
     constructor() {
         this.notes = [];
-        this.title = "";
-        this.content = "";
         this.noteUpdateId = null;
 
         this.$notesContainer = document.querySelector(".notes-container");
@@ -10,7 +8,7 @@ class App {
         this.$mainTextContainer = document.querySelector(".note-text-container");
         this.$saveButton = document.querySelector(".save-button");
         this.$title = document.querySelector(".note-title");
-        this.$content = document.querySelector(".note-text");
+        this.$text = document.querySelector(".note-text");
         this.$modal = document.querySelector(".modal");
         this.$modalTitle = document.querySelector(".modal-title");
         this.$modalText = document.querySelector(".modal-text")
@@ -48,30 +46,32 @@ class App {
     handleFormOpen(e) {
         if (this.$mainForm.contains(e.target)) {
             this.$mainTextContainer.classList.add("note-text-container-opened")
-            this.$title.classList.add("input-opened")
-            this.$content.classList.add("note-text-opened")
+            this.$title.classList.add("note-title-opened")
+            this.$text.classList.add("note-text-opened")
             this.$saveButton.style.display = "block";
         } else {
-            this.clearIAndCollapse()
+            this.clearAndCollapse()
         }
     }
 
     saveNote() {
-        this.title = this.$title.value;
-        this.content = this.$content.value;
+        // get values from inputs
+        const title = this.$title.value;
+        const text = this.$text.value;
 
-        if (this.title || this.content) {
+        // if user typed something, create a new note
+        if (title || text) {
             this.notes.push(
                 {
-                    title: this.title,
-                    content: this.content,
+                    title,
+                    text,
                     id: this.notes.length ? this.notes[this.notes.length - 1].id + 1 : 1,
                     color: "white"
                 }
             )
         }
 
-        this.clearIAndCollapse();
+        this.clearAndCollapse();
         this.render();
     }
 
@@ -103,10 +103,10 @@ class App {
     openModal(noteId) {
         this.noteUpdateId = noteId;
         const noteIndex = this.notes.findIndex(note => Number(note.id) === Number(noteId));
-        let { title, content } = this.notes[noteIndex];
+        let { title, text } = this.notes[noteIndex];
 
         this.$modalTitle.value = title;
-        this.$modalText.value = content;
+        this.$modalText.value = text;
         this.$modal.style.display = "flex";
     }
 
@@ -122,25 +122,22 @@ class App {
         } else {
             const noteIndex = this.notes.findIndex(note => Number(note.id) === Number(this.noteUpdateId));
             this.notes[noteIndex].title = toUpdateTitle;
-            this.notes[noteIndex].content = toUpdateText;
+            this.notes[noteIndex].text = toUpdateText;
         }
         this.$modal.style.display = "none";
         this.render()
 
     }
-        
 
-
-
-
-    clearIAndCollapse() {
+    clearAndCollapse() {
+        // clearing the form
         this.$title.value = "";
-        this.$content.value = "";
-        this.title = "";
-        this.content = "";
+        this.$text.value = "";
+
+        // collapsing the input form
         this.$mainTextContainer.classList.remove("note-text-container-opened")
-        this.$title.classList.remove("input-opened")
-        this.$content.classList.remove("note-text-opened")
+        this.$title.classList.remove("note-title-opened")
+        this.$text.classList.remove("note-text-opened")
         this.$saveButton.style.display = "none";
     }
 
@@ -185,13 +182,11 @@ class App {
         this.render()
     }
 
-
-
     render() { 
         const noteList = this.notes.map(note => {
-            return `<div class="note" data-id="${note.id}" style="background-color: ${note.color || 'white'}">
+            return `<div class="note" data-id="${note.id}" style="background-color: ${note.color}">
                         <h2>${note.title}</h2>
-                        <p>${note.content}</p>
+                        <p>${note.text}</p>
                         <div class="icons">
                             <div class="toolbox-container">
                                 <i class="fa-solid fa-palette palette-icon" data-id="${note.id}"></i>
