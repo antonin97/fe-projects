@@ -5,6 +5,8 @@ class App {
         this.undoStack = [];
         this.redoStack = [];
         this.maxUndoSteps = 10;
+        this.firstDelete = true;
+        this.firstUndo = true;
 
         this.$notesContainer = document.querySelector(".notes-container");
         this.$mainForm = document.querySelector(".main-form");
@@ -73,6 +75,11 @@ class App {
             const previousState = this.undoStack.pop();
             this.notes = JSON.parse(previousState);
             this.render();
+            if (this.firstUndo) {
+                this.showRedoPopup();
+                this.firstUndo = false;
+            }
+            
         }
     }
 
@@ -131,6 +138,10 @@ class App {
         this.saveState()
         this.notes = this.notes.filter(note => Number(note.id) !== Number(noteId));
         this.render();
+        if (this.firstDelete) {
+            this.showUndoPopup()
+            this.firstDelete = false;
+        }
     }
 
 
@@ -142,6 +153,21 @@ class App {
             const noteId = toEdit.dataset.id;
             this.openModal(noteId)
         }
+    }
+
+    showUndoPopup() {
+        const popup = document.createElement('div');
+        popup.className = `popup-undo`;
+        popup.textContent = `For undo press Ctrl + Z`;
+        document.body.appendChild(popup);
+    }
+
+
+    showRedoPopup() {
+        const popup = document.createElement('div');
+        popup.className = `popup-redo`;
+        popup.textContent = `For redo press Ctrl + Y`;
+        document.body.appendChild(popup);
     }
 
     openModal(noteId) {

@@ -28,7 +28,6 @@ header {
 h1 {
     font-size: 3rem;
     font-weight: 500;
-    
 }
 
 
@@ -287,4 +286,48 @@ h2 {
     border: none;
     cursor: pointer;
     align-self: flex-end;
+}
+
+
+
+/* ------------------------ 
+         
+    POPUP
+
+------------------------ */
+
+.popup-undo, .popup-redo {
+    position: fixed;
+    bottom: 0;
+    right: 20%;
+    height: 200px;
+    padding: 1em;
+    font-size: 1.5rem;
+    font-weight: 500;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    background-color: #FBBC04;
+    text-align: center;
+    line-height: 3;
+    transform: translate(0, 100%);
+    animation: popup 3s;
+}
+
+
+@keyframes popup {
+    0% {
+        transform: translate(0, 100%)
+    }
+
+    20% {
+        transform: translate(0, 0)
+    }
+
+    80% {
+        transform: translate(0, 0)
+    }
+
+    100% {
+        transform: translate(0, 100%)
+    }
 }
