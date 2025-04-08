@@ -157,8 +157,8 @@ class App {
 
     showUndoPopup() {
         const popup = document.createElement('div');
-        popup.className = `popup-undo`;
-        popup.textContent = `For undo press Ctrl + Z`;
+        popup.className = "popup-undo";
+        popup.textContent = "For undo press Ctrl + Z";
         document.body.appendChild(popup);
     }
 
