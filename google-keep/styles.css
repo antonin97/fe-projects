@@ -1,12 +1,12 @@
 body {
-  font-family: "Google Sans", sans-serif;
-  margin: 0 auto;
-  max-width: 1000px;
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  min-height: 100vh;
-  background: #f2f2f2;
+    font-family: "Google Sans", sans-serif;
+    margin: 0 auto;
+    max-width: 1000px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    min-height: 100vh;
+    background: #f2f2f2;
 }
 
 /* ------------------------ 
@@ -16,17 +16,17 @@ body {
 ------------------------ */
 
 header {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  width: fit-content;
-  margin: 1rem auto;
-  text-align: justify;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    width: fit-content;
+    margin: 1rem auto;
+    text-align: justify;
 }
 
 h1 {
-  font-size: 3rem;
-  font-weight: 500;
+    font-size: 3rem;
+    font-weight: 500;
 }
 
 /* ------------------------ 
@@ -36,77 +36,77 @@ h1 {
 ------------------------ */
 
 .main-form {
-  width: 80%;
-  margin: 0 auto 3rem;
-  box-shadow: 0 0 5px grey;
-  border-radius: 1rem;
-  background: white;
+    width: 80%;
+    margin: 0 auto 3rem;
+    box-shadow: 0 0 5px grey;
+    border-radius: 1rem;
+    background: white;
 }
 
 .note-title {
-  display: none;
-  font-family: "Google Sans", sans-serif;
-  width: 100%;
-  font-size: 1.3rem;
-  padding: 1rem 2rem;
-  border-radius: 1rem;
-  border: none;
+    display: none;
+    font-family: "Google Sans", sans-serif;
+    width: 100%;
+    font-size: 1.3rem;
+    padding: 1rem 2rem;
+    border-radius: 1rem;
+    border: none;
 }
 
 .note-title-opened {
-  display: block;
-  border-bottom-left-radius: 0px;
-  border-bottom-right-radius: 0px;
+    display: block;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
 }
 
 .note-title:active,
 .note-title:focus {
-  outline: none;
+    outline: none;
 }
 
 .note-text-container {
-  background: white;
-  border-radius: 1rem;
-  display: flex;
-  flex-direction: column;
+    background: white;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
 }
 
 .note-text-container-opened {
-  border-top-left-radius: 0px;
-  border-top-right-radius: 0px;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
 }
 
 .note-text-container:has(.note-text:focus) {
-  outline: none;
+    outline: none;
 }
 
 .note-text {
-  resize: none;
-  border: none;
-  height: 3.3rem;
-  background-color: transparent;
-  font-family: "Google Sans", sans-serif;
-  font-size: 1rem;
-  padding: 1rem 2rem;
-  outline: none;
+    resize: none;
+    border: none;
+    height: 3.3rem;
+    background-color: transparent;
+    font-family: "Google Sans", sans-serif;
+    font-size: 1rem;
+    padding: 1rem 2rem;
+    outline: none;
 }
 
 .note-text-opened {
-  min-height: 200px;
+    min-height: 200px;
 }
 
 .save-button {
-  display: none;
-  background-color: #4285f4;
-  color: white;
-  align-self: flex-end;
-  font-family: "Google Sans", sans-serif;
-  font-size: 1rem;
-  padding: 0.7rem 2rem;
-  margin: 0.5rem;
-  border-radius: 1rem;
-  border: none;
-  cursor: pointer;
+    display: none;
+    background-color: #4285f4;
+    color: white;
+    align-self: flex-end;
+    font-family: "Google Sans", sans-serif;
+    font-size: 1rem;
+    padding: 0.7rem 2rem;
+    margin: 0.5rem;
+    border-radius: 1rem;
+    border: none;
+    cursor: pointer;
 }
 
 /* ------------------------ 
@@ -116,39 +116,39 @@ h1 {
 ------------------------ */
 
 .note {
-  border-radius: 1rem;
-  background: white;
-  padding: 1rem;
-  display: flex;
-  flex-direction: column;
+    border-radius: 1rem;
+    background: white;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
 }
 
 .note:hover {
-  box-shadow: 0 0 5px grey;
+    box-shadow: 0 0 5px grey;
 }
 
 .notes-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 1rem;
-  width: 80%;
-  margin: 0 auto 8rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1rem;
+    width: 80%;
+    margin: 0 auto 8rem;
 }
 
 h2 {
-  margin: 0;
+    margin: 0;
 }
 
 .icons {
-  display: flex;
-  margin-top: auto;
-  justify-content: flex-end;
-  gap: 0.5rem;
+    display: flex;
+    margin-top: auto;
+    justify-content: flex-end;
+    gap: 0.5rem;
 }
 
 .trash-icon:hover {
-  cursor: pointer;
-  color: rgb(175, 3, 3);
+    cursor: pointer;
+    color: rgb(175, 3, 3);
 }
 
 /* ------------------------ 
@@ -158,47 +158,47 @@ h2 {
 ------------------------ */
 
 .toolbox-container {
-  position: relative;
+    position: relative;
 }
 
 .toolbox-container:hover {
-  background: conic-gradient(
-    from 0deg at 50% 50%,
-    #ff0000 0deg,
-    /* Red */ #ff8c00 60deg,
-    /* Orange */ #ffd700 120deg,
-    /* Yellow */ #4de94c 180deg,
-    /* Green */ #3783ff 240deg,
-    /* Blue */ #4815aa 300deg,
-    /* Indigo */ #9400d3 360deg /* Violet */
-  );
-  background-clip: text;
-  color: transparent;
+    background: conic-gradient(
+        from 0deg at 50% 50%,
+        #ff0000 0deg,
+        /* Red */ #ff8c00 60deg,
+        /* Orange */ #ffd700 120deg,
+        /* Yellow */ #4de94c 180deg,
+        /* Green */ #3783ff 240deg,
+        /* Blue */ #4815aa 300deg,
+        /* Indigo */ #9400d3 360deg /* Violet */
+    );
+    background-clip: text;
+    color: transparent;
 }
 
 .toolbox {
-  position: absolute;
-  top: 90%;
-  display: none;
-  gap: 0.1em;
-  grid-template-columns: repeat(3, 1fr);
-  background: white;
-  border-radius: 1rem;
-  padding: 0.5em;
+    position: absolute;
+    top: 90%;
+    display: none;
+    gap: 0.1em;
+    grid-template-columns: repeat(3, 1fr);
+    background: white;
+    border-radius: 1rem;
+    padding: 0.5em;
 }
 
 .toolbox-opened {
-  display: grid;
+    display: grid;
 }
 
 .toolbox-option {
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
 }
 
 .toolbox-option:hover {
-  transform: scale(1.1);
+    transform: scale(1.1);
 }
 
 /* ------------------------ 
@@ -208,69 +208,69 @@ h2 {
 ------------------------ */
 
 .modal {
-  position: fixed;
-  display: none;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  inset: 0;
-  background-color: rgba(99, 98, 98, 0.726);
-  z-index: 1;
+    position: fixed;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    inset: 0;
+    background-color: rgba(99, 98, 98, 0.726);
+    z-index: 1;
 }
 
 .modal-content-wrapper {
-  width: 80%;
-  max-width: 600px;
+    width: 80%;
+    max-width: 600px;
 }
 
 .modal-title {
-  font-family: "Google Sans", sans-serif;
-  font-size: 1.4rem;
-  padding: 1.8rem 2rem;
-  width: 100%;
-  border-radius: 1rem;
-  border-bottom-left-radius: 0px;
-  border-bottom-right-radius: 0px;
-  border: none;
+    font-family: "Google Sans", sans-serif;
+    font-size: 1.4rem;
+    padding: 1.8rem 2rem;
+    width: 100%;
+    border-radius: 1rem;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    border: none;
 }
 
 .modal-title:active,
 .modal-title:focus {
-  outline: none;
+    outline: none;
 }
 
 .modal-text-container {
-  border: none;
-  background-color: white;
-  border-radius: 1rem;
-  padding: 1rem 2rem;
-  border-top-left-radius: 0px;
-  border-top-right-radius: 0px;
-  display: flex;
-  flex-direction: column;
+    border: none;
+    background-color: white;
+    border-radius: 1rem;
+    padding: 1rem 2rem;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    display: flex;
+    flex-direction: column;
 }
 
 .modal-text {
-  resize: none;
-  background: none;
-  border: none;
-  font-family: "Google Sans", sans-serif;
-  font-size: 1rem;
-  min-height: 200px;
-  outline: none;
+    resize: none;
+    background: none;
+    border: none;
+    font-family: "Google Sans", sans-serif;
+    font-size: 1rem;
+    min-height: 200px;
+    outline: none;
 }
 
 .modal-save-button {
-  background-color: #4285f4;
-  color: white;
-  font-family: "Google Sans", sans-serif;
-  font-size: 1rem;
-  padding: 0.7rem 2rem;
-  margin: 0.5rem;
-  border-radius: 1rem;
-  border: none;
-  cursor: pointer;
-  align-self: flex-end;
+    background-color: #4285f4;
+    color: white;
+    font-family: "Google Sans", sans-serif;
+    font-size: 1rem;
+    padding: 0.7rem 2rem;
+    margin: 0.5rem;
+    border-radius: 1rem;
+    border: none;
+    cursor: pointer;
+    align-self: flex-end;
 }
 
 /* ------------------------ 
@@ -281,36 +281,58 @@ h2 {
 
 .popup-undo,
 .popup-redo {
-  position: fixed;
-  bottom: 0;
-  right: 20%;
-  height: 200px;
-  padding: 1em;
-  font-size: 1.5rem;
-  font-weight: 500;
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
-  background-color: #fbbc04;
-  text-align: center;
-  line-height: 3;
-  transform: translate(0, 100%);
-  animation: popup 3s;
+    position: fixed;
+    bottom: 0;
+    right: 20%;
+    height: 200px;
+    padding: 1em;
+    font-size: 1.5rem;
+    font-weight: 500;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    background-color: #fbbc04;
+    text-align: center;
+    line-height: 3;
+    transform: translate(0, 100%);
+    animation: popup 3s;
+}
+
+.popup-undo-mobile,
+.popup-redo-mobile {
+    position: absolute;
+    top: 0;
+    right: 5%;
+    padding: 1em;
+    font-size: 1rem;
+    font-weight: 500;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    background-color: #fbbc04;
+    text-align: center;
+    line-height: 3;
+}
+
+
+
+.popup-undo-mobile {
+  right: auto;
+  left: 5%
 }
 
 @keyframes popup {
-  0% {
-    transform: translate(0, 100%);
-  }
+    0% {
+        transform: translate(0, 100%);
+    }
 
-  20% {
-    transform: translate(0, 0);
-  }
+    20% {
+        transform: translate(0, 0);
+    }
 
-  80% {
-    transform: translate(0, 0);
-  }
+    80% {
+        transform: translate(0, 0);
+    }
 
-  100% {
-    transform: translate(0, 100%);
-  }
+    100% {
+        transform: translate(0, 100%);
+    }
 }
