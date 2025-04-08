@@ -2,6 +2,9 @@ class App {
     constructor() {
         this.notes = [];
         this.noteUpdateId = null;
+        this.undoStack = [];
+        this.redoStack = [];
+        this.maxUndoSteps = 10;
 
         this.$notesContainer = document.querySelector(".notes-container");
         this.$mainForm = document.querySelector(".main-form");
@@ -41,6 +44,44 @@ class App {
             this.handleToolbox(e)
         })
 
+        document.addEventListener('keydown', (e) => {
+            if ((e.ctrlKey || e.metaKey) && e.key === 'z') {
+                e.preventDefault();
+                this.undo();
+            }
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if ((e.ctrlKey || e.metaKey) && e.key === 'y') {
+                e.preventDefault();
+                this.redo();
+            }
+        });
+
+    }
+
+    saveState() {
+        this.undoStack.push(JSON.stringify(this.notes))
+        if (this.undoStack.length > this.maxUndoSteps) {
+            this.undoStack.shift();
+        }
+    }
+
+    undo() {
+        if (this.undoStack.length > 0) {
+            this.redoStack.push(JSON.stringify(this.notes))
+            const previousState = this.undoStack.pop();
+            this.notes = JSON.parse(previousState);
+            this.render();
+        }
+    }
+
+    redo() {
+        if (this.redoStack.length > 0) {
+            const nextState = this.redoStack.pop();
+            this.notes = JSON.parse(nextState);
+            this.render();
+        }
     }
 
     handleFormOpen(e) {
@@ -61,6 +102,7 @@ class App {
 
         // if user typed something, create a new note
         if (title || text) {
+            this.saveState()
             this.notes.push(
                 {
                     title,
@@ -69,6 +111,7 @@ class App {
                     color: "white"
                 }
             )
+            
         }
 
         this.clearAndCollapse();
@@ -85,6 +128,7 @@ class App {
     }
 
     deleteNote(noteId) {
+        this.saveState()
         this.notes = this.notes.filter(note => Number(note.id) !== Number(noteId));
         this.render();
     }
@@ -118,8 +162,10 @@ class App {
         let toUpdateText = this.$modalText.value;
 
         if (!toUpdateText && !toUpdateTitle) {
+            this.saveState()
             this.deleteNote(this.noteUpdateId)
         } else {
+            this.saveState()
             const noteIndex = this.notes.findIndex(note => Number(note.id) === Number(this.noteUpdateId));
             this.notes[noteIndex].title = toUpdateTitle;
             this.notes[noteIndex].text = toUpdateText;
@@ -142,8 +188,6 @@ class App {
     }
 
     handleToolbox(e) {
-        console.log("triggered")
-
         const hoveredElement = e.target;
         const paletteIcon = hoveredElement.closest('.palette-icon');
         const toolboxContainer = hoveredElement.closest('.toolbox-container');
@@ -173,6 +217,7 @@ class App {
         const selectedColor = colorOption.style.backgroundColor;
         
         const noteId = currentNote.dataset.id;
+        this.saveState()
         this.notes = this.notes.map(note => {
             if (Number(note.id) === Number(noteId)) {
                 note.color = selectedColor;
