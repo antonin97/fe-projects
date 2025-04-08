@@ -300,6 +300,7 @@ h2 {
 .popup-undo-mobile,
 .popup-redo-mobile {
     position: absolute;
+    user-select: none;
     top: 0;
     right: 5%;
     padding: 1em;
@@ -310,13 +311,17 @@ h2 {
     background-color: #fbbc04;
     text-align: center;
     line-height: 3;
+    transition: background-color 0.2s;
 }
-
-
 
 .popup-undo-mobile {
   right: auto;
   left: 5%
+}
+
+.popup-inactive {
+  background-color: gray;
+  
 }
 
 @keyframes popup {

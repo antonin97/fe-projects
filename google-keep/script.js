@@ -73,6 +73,7 @@ class App {
         if (this.undoStack.length > this.maxUndoSteps) {
             this.undoStack.shift();
         }
+        this.deactivatePopup();
     }
 
     undo() {
@@ -86,6 +87,7 @@ class App {
                 this.firstUndo = false;
             }
         }
+        this.deactivatePopup();
     }
 
     redo() {
@@ -95,6 +97,7 @@ class App {
             this.notes = JSON.parse(nextState);
             this.render();
         }
+        this.deactivatePopup();
     }
 
     handleFormOpen(e) {
@@ -169,7 +172,7 @@ class App {
             popup.textContent = "For undo press Ctrl + Z";
         } else {
             popup.className = "popup-undo-mobile";
-            popup.innerHTML = '<i class="fas fa-arrow-left"></i>';
+            popup.innerHTML = '<i class="fas fa-chevron-left"></i> ';
             popup.addEventListener("click", () => {
                 this.undo();
             });
@@ -184,9 +187,8 @@ class App {
             popup.className = "popup-redo";
             popup.textContent = "For redo press Ctrl + Y";
         } else {
-            console.log("NOW??")
             popup.className = "popup-redo-mobile";
-            popup.innerHTML = '<i class="fas fa-arrow-right"></i>';
+            popup.innerHTML = '<i class="fas fa-chevron-right"></i> ';
             popup.addEventListener("click", () => {
                 this.redo();
             });
@@ -285,6 +287,36 @@ class App {
             .querySelector(".toolbox")
             .classList.remove("toolbox-opened");
         this.render();
+    }
+
+    deactivatePopup() {
+        try {
+            if (!this.hasFinePointer) {
+            if (this.undoStack.length === 0) {
+                document
+                    .querySelector(".popup-undo-mobile")
+                    .classList.add("popup-inactive");
+            } else {
+                document
+                    .querySelector(".popup-undo-mobile")
+                    .classList.remove("popup-inactive");
+            } 
+            if (this.redoStack.length === 0) {
+                document
+                    .querySelector(".popup-redo-mobile")
+                    .classList.add("popup-inactive");
+            } else {
+                document
+                    .querySelector(".popup-redo-mobile")
+                    .classList.remove("popup-inactive");
+            }
+                
+            }
+        } catch (error) {
+            // Handle error if popup elements are not found
+            console.error("Popup elements not found:", error);
+        }
+        
     }
 
     render() {
