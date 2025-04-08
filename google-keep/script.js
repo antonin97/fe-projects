@@ -19,7 +19,7 @@ class App {
 
 
     addEventListeners() {
-        document.body.addEventListener("click", (e) => {
+        document.addEventListener("click", (e) => {
             this.handleFormOpen(e);
             this.handleNoteDelete(e);
             this.handleNoteEdit(e);
@@ -142,6 +142,8 @@ class App {
     }
 
     handleToolbox(e) {
+        console.log("triggered")
+
         const hoveredElement = e.target;
         const paletteIcon = hoveredElement.closest('.palette-icon');
         const toolboxContainer = hoveredElement.closest('.toolbox-container');
