@@ -1,5 +1,5 @@
 body {
-    background-image: linear-gradient(black, #0d1e66);
+    background-image: linear-gradient(black, #08113b);
     color: white;
     font-family: "Saira", sans-serif;
 }
@@ -38,7 +38,7 @@ nav {
 }
 
 #burger-menu {
-    font-size: 2.5rem;
+    font-size: min(10vw, 3rem);
 }
 
 li {
@@ -87,7 +87,7 @@ button {
 
 h1 {
     width: fit-content;
-    font-size: 3rem;
+    font-size: min(10vw, 3.5rem);
     font-weight: 700;
     text-shadow: 2px 2px 0px #1734b5;
     padding: 1em 0;
