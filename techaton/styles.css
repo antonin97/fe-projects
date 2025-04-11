@@ -1,0 +1,119 @@
+body {
+    background-image: linear-gradient(black, #0d1e66);
+    color: white;
+    font-family: "Saira", sans-serif;
+}
+
+.body-container {
+    width: 80%;
+    max-width: 1400px;
+    min-width: 320px;
+    margin: 0 auto;
+}
+
+/* ---------------------
+         HEADER 
+--------------------- */
+header {
+    display: flex;
+    align-items: center;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+nav {
+    width: 60%;
+    max-width: 520px;
+    text-align: end;
+}
+
+.link-martykan {
+    font-size: 1rem;
+    padding-right: .5em
+}
+
+.full-screen-menu {
+    display: none;
+}
+
+#burger-menu {
+    font-size: 2.5rem;
+}
+
+li {
+    flex: 1;
+    flex-basis: fit-content;
+    text-align: center;
+    position: relative;
+}
+
+a {
+    display: block;
+    text-decoration: none;
+    color: white;
+    font-size: 1.3rem;
+    position: relative;
+    padding: 0.5em 0;
+    transition: all 100ms;
+}
+
+a:hover {
+    color: #e9ecfc;
+}
+
+.link-martykan {
+    transition: all 200ms;
+}
+
+a:hover > .link-martykan {
+    color: #1734b5;
+    transform: scale(1.2);
+}
+
+button {
+    width: 50px;
+    height: 100px;
+}
+
+.underline {
+    position: absolute;
+    content: "";
+    inset: 80% -2% 10% -2%;
+    border-radius: 1em;
+    background: #1734b5;
+}
+
+
+h1 {
+    width: fit-content;
+    font-size: 3rem;
+    font-weight: 700;
+    text-shadow: 2px 2px 0px #1734b5;
+    padding: 1em 0;
+
+}
+
+.cursor {
+    margin-right: auto;
+    font-size: 2.7rem;
+    padding-left: 0.03em;
+    text-shadow: 2px 2px px #1734b5;
+}
+
+
+@media all and (min-width: 820px) {
+
+    .full-screen-menu {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    #burger-menu {
+        display: none;
+    }
+}
+
+/* ---------------------
+         MAIN 
+--------------------- */

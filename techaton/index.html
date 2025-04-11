@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <title id="dynamic-title">techaton</title>
+        <!-- 60 char max, SPA, notifications -->
+
+        <meta
+            name="description"
+            content="Personal tech blog about tech, math, AI and web design"
+        />
+        <meta name="author" content="Antonin Martykan" />
+        <meta name="robots" content="index, follow" />
+        <!-- noindex for private pages, nofollow for untrusted links -->
+
+        <!-- Favicon and Touch Icon -->
+        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+        <!-- use SVG format -->
+        <link
+            rel="apple-touch-icon"
+            sizes="180x180"
+            href="/apple-touch-icon.png"
+        />
+
+        <!-- Theme color for light/dark mode browser UI -->
+        <meta
+            name="theme-color"
+            content="#ffffff"
+            media="(prefers-color-scheme: light)"
+        />
+        <meta
+            name="theme-color"
+            content="#000000"
+            media="(prefers-color-scheme: dark)"
+        />
+
+        <!-- Social Media Meta Tags (optional) -->
+        <!--
+    <meta property="og:title" content="Site Title">
+    <meta property="og:description" content="Site description for SEO">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://example.com">
+    <meta property="og:image" content="https://example.com/images/social-preview.jpg">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Best Coffee Shops in Paris">
+    <meta name="twitter:description" content="Where to find the best espresso in Paris.">
+    <meta name="twitter:image" content="https://example.com/images/coffee-shop.jpg">
+    <meta name="twitter:site" content="@MyGuide">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Page Title",
+      "description": "Page Description"
+    }
+    </script>
+    -->
+
+        <!-- Site Verification Tags (Google, Bing) -->
+        <!--
+    <meta name="google-site-verification" content="ABC123...">
+    <meta name="msvalidate.01" content="XYZ456...">
+    -->
+
+        <!-- Basic development security (avoid in production frameworks) -->
+        <!-- could break React -->
+
+        <!-- Fonts  -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Saira:ital,wght@0,100..900;1,100..900&display=swap"
+            rel="stylesheet"
+        />
+
+        <!-- Base styles -->
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        />
+        <link rel="stylesheet" href="./basic-styles.css" />
+        <link rel="stylesheet" href="./styles.css" />
+
+        <!-- Preload critical resources (optional) -->
+        <!--
+    <link rel="preload" href="css/important-styles.css" as="style">
+    <link rel="preload" href="custom-font.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="hero-image.webp" as="image">
+    -->
+
+        <!-- Main JavaScript file (module = ES6 + auto defer) -->
+        <script type="module" src="app.js"></script>
+    </head>
+
+    <body>
+        <div class="body-container">
+            <header>
+                <h1>techaton</h1>
+                <span class="cursor">|</span>
+                <nav>
+                    <i id="burger-menu" class="fa-solid fa-bars"></i>
+                    <ul class="full-screen-menu">
+                        <li>
+                            <a class="nav-item-link" href="#about">
+                                about me
+                                <div class="underline-div"></div>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="nav-item-link" href="#contact">
+                                contact
+                                <div class="underline-div"></div>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="nav-item-link" href="#">
+                                <i
+                                    class="fa-solid fa-arrow-up-right-from-square link-martykan"
+                                ></i>
+                                martykan.net
+                                <div class="underline-div"></div>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </header>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,81 @@
+/* Apply border-box sizing to all elements */
+* {
+    box-sizing: border-box;
+}
+
+/* Base HTML styles */
+html {
+    -webkit-text-size-adjust: 100%; /* Prevent iOS text auto-scaling */
+    scroll-behavior: smooth;        /* Smooth scrolling for anchor links */
+}
+
+/* Ensure images are responsive and don’t overflow */
+img {
+    max-width: 100%;
+    display: block;
+    height: auto;
+}
+
+/* Ensure body fills the viewport height */
+body {
+    min-height: 100vh;
+}
+
+/* Remove default inline behavior of iframes */
+iframe {
+    display: block;
+}
+
+/* Respect user preference for reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* Remove default margin and padding from common elements */
+body, h1, h2, h3, h4, h5, h6, p, blockquote,
+ul, ol, dl, figure, pre, hr {
+    margin: 0;
+    padding: 0;
+}
+
+/* Remove default padding and bullets from lists */
+ul, ol {
+    padding-left: 0;
+    list-style: none;
+}
+
+/* Inherit font and remove default styles from form elements */
+input, button, textarea, select {
+    font: inherit;
+    background: none;
+    border: none;
+    outline: none;
+}
+
+/* Make buttons use a pointer cursor */
+button {
+    cursor: pointer;
+}
+
+/* Remove spacing in tables */
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* Remove default quote styling */
+blockquote, q {
+    quotes: none;
+}
+
+/* Remove pseudo quote marks from blockquotes and quotes */
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
