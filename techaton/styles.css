@@ -14,6 +14,8 @@ body {
 /* ---------------------
          HEADER 
 --------------------- */
+
+
 header {
     display: flex;
     align-items: center;
@@ -22,23 +24,36 @@ header {
     right: 0;
 }
 
+
+/* -------LOGO--------- */
+
+h1 {
+    width: fit-content;
+    font-size: min(10vw, 3.5rem);
+    font-weight: 700;
+    padding: 1em 0;
+}
+
+.cursor {
+    margin-right: auto;
+    font-size: 2.7rem;
+    padding-left: 0.03em;
+}
+
+/* -------NAV---------- */
+
 nav {
     width: 60%;
     max-width: 520px;
     text-align: end;
 }
 
-.link-martykan {
-    font-size: 1rem;
-    padding-right: .5em
+#burger-menu {
+    font-size: min(10vw, 3rem);
 }
 
 .full-screen-menu {
     display: none;
-}
-
-#burger-menu {
-    font-size: min(10vw, 3rem);
 }
 
 li {
@@ -48,7 +63,12 @@ li {
     position: relative;
 }
 
-a {
+.link-martykan {
+    font-size: 1rem;
+    padding-right: .5em
+}
+
+.nav-item-link {
     display: block;
     text-decoration: none;
     color: white;
@@ -58,7 +78,7 @@ a {
     transition: all 100ms;
 }
 
-a:hover {
+.nav-item-link:hover {
     color: #e9ecfc;
 }
 
@@ -66,14 +86,9 @@ a:hover {
     transition: all 200ms;
 }
 
-a:hover > .link-martykan {
+.nav-item-link:hover > .link-martykan {
     color: #1734b5;
     transform: scale(1.2);
-}
-
-button {
-    width: 50px;
-    height: 100px;
 }
 
 .underline {
@@ -83,24 +98,6 @@ button {
     border-radius: 1em;
     background: #1734b5;
 }
-
-
-h1 {
-    width: fit-content;
-    font-size: min(10vw, 3.5rem);
-    font-weight: 700;
-    text-shadow: 2px 2px 0px #1734b5;
-    padding: 1em 0;
-
-}
-
-.cursor {
-    margin-right: auto;
-    font-size: 2.7rem;
-    padding-left: 0.03em;
-    text-shadow: 2px 2px px #1734b5;
-}
-
 
 @media all and (min-width: 820px) {
 

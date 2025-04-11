@@ -4,9 +4,9 @@ export default function typeWriter() {
     const title = document.querySelector("h1");
     const cursor = document.querySelector(".cursor");
 
+    const text = title.innerText;
 
-    const text = "techaton";
-
+    // generating random times for type writer
     const times = Array.from(
         { length: text.length },
         () => Math.floor(Math.random() * 350) + 100
