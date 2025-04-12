@@ -18,6 +18,7 @@ body {
 header {
     display: flex;
     align-items: center;
+    position: relative;
     top: 0;
     left: 0;
     right: 0;
@@ -30,11 +31,12 @@ h1 {
     font-size: min(10vw, 3.5rem);
     font-weight: 700;
     padding: 1em 0;
+    user-select: none;
 }
 
 .cursor {
     margin-right: auto;
-    font-size: 2.7rem;
+    font-size: 3.5rem;
     padding-left: 0.03em;
 }
 
@@ -54,8 +56,8 @@ nav {
 .close-menu {
     position: absolute;
     padding: 0.5em;
-    right: 3rem;
-    top: 3rem;
+    right: 2%;
+    top: 2%;
     font-size: 3rem;
     cursor: pointer;
     z-index: 1;
@@ -77,6 +79,7 @@ nav {
     display: flex;
     transform: none;
     transition: transform 300ms ease-in-out;
+    z-index: 2
 
 }
 
@@ -102,6 +105,7 @@ li {
     font-size: 3rem;
     position: relative;
     padding: 0.5em 0;
+    user-select: none;
 }
 
 .nav-item-link:hover {
@@ -159,3 +163,68 @@ li {
 /* ---------------------
          MAIN 
 --------------------- */
+
+.main-article {
+    border: 2px solid white;
+    border-radius: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 1rem;
+    position: relative;
+    z-index: 1
+}
+
+.main-article-img {
+    border-radius: 1rem;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    object-fit: cover;
+    width: 100%;
+    transition: all 200ms;
+}
+
+.main-article-title {
+    padding: 0.5em 5%;
+    font-size: clamp(1.3rem, 5vw, 3.5rem);
+    position: absolute;
+    background-color: black;
+    opacity: 0.95;
+    border-radius: 2rem;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    inset: 70% 0 0 0;
+    transition: all 200ms;
+    user-select: none;
+}
+
+.main-article-desc {
+    padding: 2em 5%;
+    font-size: clamp(1rem, 3vw, 2.5rem);
+    position: absolute;
+    transform: scaleY(0);
+    transform-origin: bottom;
+    inset: 20% 0 0 0;
+    transition: none;
+    user-select: none;
+}
+
+.main-article:hover {
+    cursor: pointer;
+}
+
+.main-article:hover > .main-article-img {
+    border-radius: 1rem;
+    filter: blur(10px) brightness(0.3);
+}
+
+
+.main-article:hover > .main-article-title {
+    background-color: transparent;
+    inset: 0 0 0 0;
+}
+
+
+.main-article:hover > .main-article-desc {
+    transform: scaleY(1);
+    transition: all 200ms 150ms;
+}
