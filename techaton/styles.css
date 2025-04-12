@@ -15,7 +15,6 @@ body {
          HEADER 
 --------------------- */
 
-
 header {
     display: flex;
     align-items: center;
@@ -23,7 +22,6 @@ header {
     left: 0;
     right: 0;
 }
-
 
 /* -------LOGO--------- */
 
@@ -48,12 +46,36 @@ nav {
     text-align: end;
 }
 
-#burger-menu {
+.burger-menu {
     font-size: min(10vw, 3rem);
+    cursor: pointer;
+}
+
+.close-menu {
+    position: absolute;
+    padding: 0.5em;
+    right: 3rem;
+    top: 3rem;
+    font-size: 3rem;
+    cursor: pointer;
+    z-index: 1;
 }
 
 .full-screen-menu {
-    display: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: fixed;
+    inset: 0 0 0 0;
+    background-color: black;
+    transform: translateX(100%);
+    transition: transform 300ms ease-in-out;
+}
+
+.full-screen-menu-opened {
+    display: flex;
+    transform: none;
+
 }
 
 li {
@@ -61,21 +83,23 @@ li {
     flex-basis: fit-content;
     text-align: center;
     position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .link-martykan {
     font-size: 1rem;
-    padding-right: .5em
+    padding-right: 0.5em;
 }
 
 .nav-item-link {
     display: block;
     text-decoration: none;
     color: white;
-    font-size: 1.3rem;
+    font-size: 3rem;
     position: relative;
     padding: 0.5em 0;
-    transition: all 100ms;
 }
 
 .nav-item-link:hover {
@@ -83,7 +107,8 @@ li {
 }
 
 .link-martykan {
-    transition: all 200ms;
+    transition: transform 200ms;
+    font-size: 2rem;
 }
 
 .nav-item-link:hover > .link-martykan {
@@ -91,23 +116,41 @@ li {
     transform: scale(1.2);
 }
 
-.underline {
-    position: absolute;
-    content: "";
-    inset: 80% -2% 10% -2%;
-    border-radius: 1em;
-    background: #1734b5;
-}
-
-@media all and (min-width: 820px) {
-
+@media all and (min-width: 950px) {
     .full-screen-menu {
         display: flex;
-        justify-content: space-between;
+        flex-direction: row;
+        position: initial;
+        transform: none;
+        background-color: initial;
     }
 
-    #burger-menu {
+    a {
+        width: 100%;
+    }
+
+    .burger-menu {
         display: none;
+    }
+
+    .close-menu {
+        display: none;
+    }
+
+    .underline {
+        position: absolute;
+        content: "";
+        inset: 80% -2% 10% -2%;
+        border-radius: 1em;
+        background: #1734b5;
+    }
+
+    .nav-item-link {
+        font-size: 1.3rem;
+    }
+
+    .link-martykan {
+        font-size: 1rem;
     }
 }
 
