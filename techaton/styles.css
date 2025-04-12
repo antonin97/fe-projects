@@ -148,7 +148,6 @@ li {
         position: absolute;
         content: "";
         inset: 80% -2% 10% -2%;
-        border-radius: 1em;
         background: #1734b5;
     }
 
@@ -169,10 +168,11 @@ li {
     border: 2px solid white;
     border-radius: 2rem;
     max-width: 1000px;
-    margin: 0 auto;
+    margin: 3em auto;
     padding: 1rem;
     position: relative;
     z-index: 1;
+    transition: all 100ms
 }
 
 .main-article-img {
@@ -228,4 +228,11 @@ li {
 .main-article:hover > .main-article-desc {
     transform: scaleY(1);
     transition: all 200ms 150ms;
+}
+
+
+@media all and (min-width: 950px) {
+    .main-article {
+        border: 4px solid white;
+    }
 }
