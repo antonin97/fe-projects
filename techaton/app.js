@@ -4,6 +4,13 @@ const burgerButton = document.querySelector(".burger-menu")
 const closeButton = document.querySelector(".close-menu");
 const menu = document.querySelector(".full-screen-menu");
 
+window.addEventListener("resize", () => {
+    if (window.innerWidth > 950) {
+        const menu = document.querySelector(".full-screen-menu");
+        menu.classList.remove("full-screen-menu-opened");
+    }
+});
+
 burgerButton.addEventListener("click", (e) => {
     openMenu();
 })

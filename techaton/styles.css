@@ -69,12 +69,14 @@ nav {
     inset: 0 0 0 0;
     background-color: black;
     transform: translateX(100%);
-    transition: transform 300ms ease-in-out;
+    transition: none;
+
 }
 
 .full-screen-menu-opened {
     display: flex;
     transform: none;
+    transition: transform 300ms ease-in-out;
 
 }
 
