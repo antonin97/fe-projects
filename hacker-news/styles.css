@@ -83,14 +83,14 @@ h3 {
 
 .comment-info {
     font-size: 0.7rem;
-    padding-left: calc(1.5rem + min(6, var(--depth)) * 2rem);
-    padding-right: calc(12rem - min(6, var(--depth)) * 2rem);
+    padding-left: calc(1.5rem + min(6, var(--depth)) * 3rem);
+    padding-right: calc(18rem - min(6, var(--depth)) * 3rem);
 }
 
 .comment-content {
     font-size: 0.9rem;
-    padding-left: calc(2rem + min(6, var(--depth)) * 2rem);
-    padding-right: calc(12rem - min(6, var(--depth)) * 2rem);
+    padding-left: calc(2rem + min(6, var(--depth)) * 3rem);
+    padding-right: calc(12rem - min(6, var(--depth)) * 3rem);
 }
 
 .comment-button {
