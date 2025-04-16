@@ -31,7 +31,7 @@ export default async function articlesFunc(path) {
 
     favoriteButtons.forEach((button) => {
         button.addEventListener("click", async function() {
-            const article = JSON.parse(button.dataset.item);
+            const article = JSON.parse(decodeURIComponent(button.dataset.item));
             store.dispatch({
                 type: article.isFavorite ? "REMOVE" : "ADD",
                 payload: {...article, isFavorite: !article.isFavorite},

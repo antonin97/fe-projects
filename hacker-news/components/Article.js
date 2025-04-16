@@ -21,7 +21,9 @@ export default function Article(data, index) {
         data.comments_count
     } ${data.comments_count === 1 ? "comment" : "comments"}</p>
                 |
-                <p class="favorite" data-item='${JSON.stringify(data)}'>${
+                <p class="favorite" data-item="${encodeURIComponent(
+                    JSON.stringify(data)
+                )}">${
         data.isFavorite ? "Remove from favorites" : "Add to favorites"
     }</p>
             </div>
