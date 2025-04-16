@@ -1,7 +1,8 @@
 body {
     margin: 0;
     padding: 0;
-    font-family: Arial, Helvetica, sans-serif
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #eee;
 }
 
 
@@ -27,7 +28,7 @@ ul {
     font-size: 1.5rem;
 }
 
-a {
+li > a {
     text-decoration: none;
     color: white;
 }
@@ -72,4 +73,38 @@ h3 {
 .external-link {
     color: #aaa;
     font-size: 0.9em;
+}
+
+.comment {
+    background-color: #eee;
+    display: flex;
+    flex-direction: column;
+}
+
+.comment-info {
+    font-size: 0.7rem;
+    padding-left: calc(1.5rem + min(6, var(--depth)) * 2rem);
+    padding-right: calc(12rem - min(6, var(--depth)) * 2rem);
+}
+
+.comment-content {
+    font-size: 0.9rem;
+    padding-left: calc(2rem + min(6, var(--depth)) * 2rem);
+    padding-right: calc(12rem - min(6, var(--depth)) * 2rem);
+}
+
+.comment-button {
+    cursor: pointer;
+}
+
+.comment-button:hover {
+    text-decoration: underline;
+}
+
+hr {
+    margin: 0;
+    border: 0;
+    border-top: 1px solid #ddd;
+    margin: 1rem 0;
+    background-color: #eee;
 }
