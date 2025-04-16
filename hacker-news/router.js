@@ -1,5 +1,6 @@
 import articles from './pages/articles.js';
 import item from './pages/item.js';
+import favorites from './pages/favorites.js';
 
 
 export default class HashRouter {
@@ -10,7 +11,7 @@ export default class HashRouter {
             "/ask": () => articles("/ask"),
             "/show": () => articles("/show"),
             "/item": (itemObj) => item(itemObj),
-            "/favorites": () => console.log("Favorites route"),
+            "/favorites": () => favorites(),
         };
         this.init();
     }

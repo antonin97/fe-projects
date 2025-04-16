@@ -75,6 +75,15 @@ h3 {
     font-size: 0.9em;
 }
 
+.favorite {
+    cursor: pointer;
+}
+
+
+.favorite:hover {
+    color: #333;
+}
+
 .comment {
     background-color: #eee;
     display: flex;
