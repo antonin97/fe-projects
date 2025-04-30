@@ -1,14 +1,28 @@
 body {
-    background-color: #222;
-    color: white;
+    background-color: var(--bg-color);
+    background: linear-gradient(145deg, #232323 7%, #111 7%, #111 55%, #232323 55%, #111);
+    color: var(--main-font-color);
     font-family: "Saira", sans-serif;
 }
 
 .body-container {
-    width: 80%;
+    width: 88%;
     max-width: 1400px;
-    min-width: 320px;
+    min-width: 340px;
     margin: 0 auto;
+    padding: 0 1em;
+}
+/* ---------------------
+        🎨 COLORS
+--------------------- */
+
+:root {
+    --bg-color: #282828;
+    --open-menu-color: black;
+    --primary-color: #a226d0;
+    --secondary-color: #741b94;
+    --main-font-color: white;
+    --primary-hover-color: #d0d1d8;
 }
 
 /* ---------------------
@@ -69,7 +83,7 @@ nav {
     justify-content: space-between;
     position: fixed;
     inset: 0 0 0 0;
-    background-color: black;
+    background-color: var(--open-menu-color);
     transform: translateX(100%);
     transition: none;
 }
@@ -100,7 +114,7 @@ li {
 .nav-item-link {
     display: block;
     text-decoration: none;
-    color: white;
+    color: var(--main-font-color);
     font-size: 2rem;
     position: relative;
     padding: 0.5em 0;
@@ -108,7 +122,7 @@ li {
 }
 
 .nav-item-link:hover {
-    color: #e9ecfc;
+    color: var(--primary-hover-color);
 }
 
 .link-martykan {
@@ -117,7 +131,7 @@ li {
 }
 
 .nav-item-link:hover > .link-martykan {
-    color: #a226d0;
+    color: var(--primary-color);
     transform: scale(1.2);
 }
 
@@ -146,7 +160,7 @@ li {
         position: absolute;
         content: "";
         inset: 80% -2% 10% -2%;
-        background: #a226d0;
+        background: var(--primary-color);
     }
 
     .nav-item-link {
@@ -164,8 +178,8 @@ li {
 
 .main-article {
     border-radius: 1rem;
-    box-shadow: 0 0 10px #a226d0;
-    max-width: 1000px;
+    box-shadow: 0 0 20px var(--primary-color);
+    max-width: 1100px;
     margin: 3em auto;
     padding: 1rem;
     position: relative;
@@ -176,21 +190,18 @@ li {
 
 .main-article-img {
     border-radius: 1rem;
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
     object-fit: cover;
     width: 100%;
     transition: border-radius, filter 300ms;
 }
 
 .main-article-title {
-    padding: 0.5em 5% 0.5em;
-    font-size: clamp(1.6rem, 5vw, 3.5rem);
+    padding: 3% 5%;
+    font-size: clamp(1.5rem, 5vw, 3.5rem);
     position: absolute;
     background-color: rgb(0, 0, 0, 0.75);
     border-radius: 1rem;
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
+
     inset: 70% 0 0 0;
     transition: padding-top, background-color, inset 300ms;
     user-select: none;
@@ -209,7 +220,7 @@ li {
 
 .main-article:hover {
     cursor: pointer;
-    box-shadow: 0 0 25px #a226d0;
+    box-shadow: 0 0 40px var(--primary-color);
 }
 
 .main-article:hover > .main-article-img {
@@ -228,21 +239,17 @@ li {
     transition: all 300ms 200ms;
 }
 
-@media all and (min-width: 950px) {
-    .main-article {
-    }
-}
 
 /* ---------------------
          TOPICS
 --------------------- */
 
 .topic-choose {
-    max-width: 1000px;
+    max-width: 1100px;
+    border: 2px solid white;
     margin: 4rem auto;
     display: flex;
     justify-content: center;
-    box-shadow: 0 0 20px white;
     border-radius: 1em;
     padding: 1rem;
     align-items: center;
@@ -250,7 +257,7 @@ li {
 }
 
 .topic-title {
-    font-size: 1.5rem;
+    font-size: clamp(1.2rem, 3vw, 1.8rem);
     padding-right: 1rem;
     display: none;
 }
@@ -258,18 +265,18 @@ li {
 .topics-container {
     display: flex;
     width: 100%;
-    max-width: 260px;
+    max-width: 300px;
     justify-content: space-between;
     align-items: center;
 
 }
 
 .topic-icon {
-    width: 40px;
+    width: 15%;
+    max-width: 50px;
     aspect-ratio: 1/1;
     border-radius: 0.5em;
-    fill: white;
-    background-color: #555;
+    background-color: white;
 }
 
 @media all and (min-width: 470px) {
@@ -289,16 +296,13 @@ li {
 .article-grid-wrapper {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-}
-
-.article-wrapper{
-
-    /* TODO spatial awareness*/
+    gap: 1rem
 }
 
 article {
     border-radius: 2rem;
     padding: 1em;
+    cursor: pointer;
 }
 
 .article-title {
@@ -313,7 +317,6 @@ article {
     position: relative;
     text-align: center;
     margin: 2rem 0;
-
     font-size: 1.2rem;
     font-weight: bold;
 }
@@ -324,17 +327,17 @@ article {
     top: 50%;
     left: 0;
     right: 0;
-    height: 1px;
-    background-color: rgb(132, 49, 228);
+    height: 2px;
+    background-color: var(--primary-color);
     z-index: -1;
 }
 
 .year-divider-polygon {
-    background-color: rgb(132, 49, 228);
-    font-size: 1rem;
-    color: white;
+    background-color: var(--primary-color);
+    font-size: clamp(1.2rem, 2vw, 1.6rem);
+    color: var(--main-font-color);
     display: inline-block;
-    padding: 0.5em 1em;
+    padding: 0.7em 1.2em;
     clip-path: polygon(25% 20%, 75% 20%, 100% 50%, 75% 80%, 25% 80%, 0% 50%);
     text-align: center;
 }
