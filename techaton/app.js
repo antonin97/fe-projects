@@ -6,8 +6,7 @@ const menu = document.querySelector(".full-screen-menu");
 
 window.addEventListener("resize", () => {
     if (window.innerWidth > 950) {
-        const menu = document.querySelector(".full-screen-menu");
-        menu.classList.remove("full-screen-menu-opened");
+        closeMenu();
     }
 });
 
@@ -26,6 +25,7 @@ function openMenu() {
 
 function closeMenu() {
     menu.classList.remove("full-screen-menu-opened");
+    document.body.style.overflow = "visible";
 }
 
 // animation functions

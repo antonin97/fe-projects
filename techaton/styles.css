@@ -1,5 +1,5 @@
 body {
-    background-image: linear-gradient(black, #08113b);
+    background-color: #222;
     color: white;
     font-family: "Saira", sans-serif;
 }
@@ -28,7 +28,7 @@ header {
 
 h1 {
     width: fit-content;
-    font-size: min(8vw, 4rem);
+    font-size: clamp(2rem, 7vw, 4.2rem);
     font-weight: 700;
     padding: 1em 0;
     user-select: none;
@@ -101,7 +101,7 @@ li {
     display: block;
     text-decoration: none;
     color: white;
-    font-size: 3rem;
+    font-size: 2rem;
     position: relative;
     padding: 0.5em 0;
     user-select: none;
@@ -113,11 +113,11 @@ li {
 
 .link-martykan {
     transition: transform 200ms;
-    font-size: 2rem;
+    font-size: 1.5rem;
 }
 
 .nav-item-link:hover > .link-martykan {
-    color: #1734b5;
+    color: #a226d0;
     transform: scale(1.2);
 }
 
@@ -146,7 +146,7 @@ li {
         position: absolute;
         content: "";
         inset: 80% -2% 10% -2%;
-        background: #1734b5;
+        background: #a226d0;
     }
 
     .nav-item-link {
@@ -163,14 +163,15 @@ li {
 --------------------- */
 
 .main-article {
-    border-radius: 2rem;
-    box-shadow: 0 0 20px white;
+    border-radius: 1rem;
+    box-shadow: 0 0 10px #a226d0;
     max-width: 1000px;
     margin: 3em auto;
     padding: 1rem;
     position: relative;
     z-index: 1;
     transition: border 100ms;
+    transition: box-shadow 300ms;
 }
 
 .main-article-img {
@@ -179,25 +180,25 @@ li {
     border-bottom-right-radius: 0;
     object-fit: cover;
     width: 100%;
-    transition: all 300ms;
+    transition: border-radius, filter 300ms;
 }
 
 .main-article-title {
-    padding: 0.5em 5%;
-    font-size: clamp(1.3rem, 5vw, 3.5rem);
+    padding: 0.5em 5% 0.5em;
+    font-size: clamp(1.6rem, 5vw, 3.5rem);
     position: absolute;
     background-color: rgb(0, 0, 0, 0.75);
-    border-radius: 2rem;
+    border-radius: 1rem;
     border-top-left-radius: 0;
     border-top-right-radius: 0;
     inset: 70% 0 0 0;
-    transition: all 300ms;
+    transition: padding-top, background-color, inset 300ms;
     user-select: none;
 }
 
 .main-article-desc {
     padding: 2em 5%;
-    font-size: clamp(1rem, 3vw, 2.5rem);
+    font-size: clamp(1rem, 3vw, 2.4rem);
     position: absolute;
     transform: scaleY(0);
     transform-origin: bottom;
@@ -208,6 +209,7 @@ li {
 
 .main-article:hover {
     cursor: pointer;
+    box-shadow: 0 0 25px #a226d0;
 }
 
 .main-article:hover > .main-article-img {
@@ -216,6 +218,7 @@ li {
 }
 
 .main-article:hover > .main-article-title {
+    padding-top: 1em;
     background-color: transparent;
     inset: 0 0 0 0;
 }
@@ -238,26 +241,27 @@ li {
     max-width: 1000px;
     margin: 4rem auto;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     box-shadow: 0 0 20px white;
-    border-radius: 2em;
+    border-radius: 1em;
     padding: 1rem;
     align-items: center;
     transition: box-shadow 100ms, transform 100ms;
 }
 
-h3 {
+.topic-title {
     font-size: 1.5rem;
-    min-width: 50%;
+    padding-right: 1rem;
+    display: none;
 }
 
 .topics-container {
     display: flex;
-    gap: 2em;
-    flex-wrap: wrap;
-    justify-content: flex-end;
+    width: 100%;
+    max-width: 260px;
+    justify-content: space-between;
     align-items: center;
-    align-content: flex-start;
+
 }
 
 .topic-icon {
@@ -268,8 +272,18 @@ h3 {
     background-color: #555;
 }
 
+@media all and (min-width: 470px) {
+    .topic-title {
+        display: initial
+    }
+
+    .topic-choose {
+        justify-content: space-between;
+    }
+}
+
 /* ---------------------
-         TOPICS
+         ARTCLES
 --------------------- */
 
 .article-grid-wrapper {
@@ -285,6 +299,14 @@ h3 {
 article {
     border-radius: 2rem;
     padding: 1em;
+}
+
+.article-title {
+    font-size: clamp(1.3rem, 4vw, 2rem);
+}
+
+.article-desc {
+    font-size: clamp(1rem, 3vw, 1.2em)
 }
 
 .year-divider {
