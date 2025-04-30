@@ -298,6 +298,10 @@ li {
     gap: 1rem
 }
 
+.article-grid-wrapper:last-child {
+    margin-bottom: 6rem;
+}
+
 article {
     border-radius: 1rem;
     padding: 1em;
@@ -360,4 +364,30 @@ article {
     .article-title {
         font-size: clamp(1.3rem, 1.5vw, 1.55rem);
     }
+}
+
+
+/* ---------------------
+        FOOTER
+--------------------- */
+footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 3em 0;
+    background: linear-gradient(90deg, #2a0936 65%, #400e52);
+    word-spacing: 0.12em;
+}
+
+.footer-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5em;
+    padding-top: 0.8em;
+}
+
+.footer-icons i {
+    font-size: 2rem;
 }
