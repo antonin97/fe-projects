@@ -178,10 +178,10 @@ li {
 
 .main-article {
     border-radius: 1rem;
+    border: 2px solid var(--primary-color);
     box-shadow: 0 0 20px var(--primary-color);
-    max-width: 1100px;
     margin: 0 auto 3em;
-    padding: 1rem;
+    padding: 0rem;
     position: relative;
     z-index: 1;
     transition: box-shadow 300ms;
@@ -201,7 +201,7 @@ li {
     background-color: rgb(0, 0, 0, 0.8);
     border-radius: 1rem;
     inset: 70% 0 0 0;
-    transition: all 300ms;
+    transition: background-color 300ms, padding-top 300ms, inset 300ms;
     user-select: none;
 }
 
@@ -243,13 +243,12 @@ li {
 --------------------- */
 
 .topic-choose {
-    max-width: 1100px;
-    border: 2px solid white;
+    border-bottom: 2px solid var(--primary-color);
     margin: 4rem auto;
     display: flex;
     justify-content: center;
-    border-radius: 1em;
     padding: 1rem;
+    padding-bottom: 1.5rem;
     align-items: center;
     transition: box-shadow 100ms, transform 100ms;
 }
@@ -374,8 +373,8 @@ footer {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 2em 0;
-    background: linear-gradient(90deg, #2a0936 65%, #400e52);
+    padding: 4em 0 2em;
+    background: linear-gradient(#0000, #000F);
     word-spacing: 0.12em;
 }
 
@@ -402,7 +401,7 @@ footer {
   -webkit-mask-position: center;
   -webkit-mask-size: contain;
   cursor: pointer;
-  transition: background-position 300ms;
+  transition: background-position 220ms;
 }
 
 /* GitHub */
