@@ -318,14 +318,21 @@ article {
 }
 
 .year-divider {
-    position: relative;
-    text-align: center;
+    display: flex;
+    justify-content: center;
     margin: 2rem 0;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     font-weight: bold;
 }
 
-.year-divider::before {
+
+.line-left, .line-right {
+    flex: 1;
+    position: relative;
+}
+
+
+.line-left::before, .line-right::before {
     content: "";
     position: absolute;
     top: 50%;
@@ -333,18 +340,23 @@ article {
     right: 0;
     height: 2px;
     background-color: var(--primary-color);
-    z-index: -1;
 }
 
-.year-divider-polygon {
-    background-color: var(--primary-color);
-    font-size: clamp(1.2rem, 2vw, 1.6rem);
-    color: var(--main-font-color);
-    display: inline-block;
-    padding: 0.7em 1.2em;
-    clip-path: polygon(25% 20%, 75% 20%, 100% 50%, 75% 80%, 25% 80%, 0% 50%);
-    text-align: center;
+.line-left::before {
+    right: 5px
 }
+
+.line-right::before {
+    left: 5px
+}
+
+
+/*<div class="year-divider">
+                <span class="line-left"></span>
+                <span class="year-divider-div">2024</span>
+                <span class="line-left"></span>
+            </div>*/
+
 
 @media (min-width: 737px) {
     .article-title {
