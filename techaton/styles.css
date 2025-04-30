@@ -1,6 +1,6 @@
 body {
     background-color: var(--bg-color);
-    background: linear-gradient(145deg, #232323 7%, #111 7%, #111 55%, #232323 55%, #111);
+    background: linear-gradient(145deg, #111, #232323 20vw, #111 20vw, #111 75vw, #232323 75vw, #111);
     color: var(--main-font-color);
     font-family: "Saira", sans-serif;
 }
@@ -8,7 +8,7 @@ body {
 .body-container {
     width: 88%;
     max-width: 1400px;
-    min-width: 340px;
+    min-width: 350px;
     margin: 0 auto;
     padding: 0 1em;
 }
@@ -184,7 +184,6 @@ li {
     padding: 1rem;
     position: relative;
     z-index: 1;
-    transition: border 100ms;
     transition: box-shadow 300ms;
 }
 
@@ -300,17 +299,20 @@ li {
 }
 
 article {
-    border-radius: 2rem;
+    border-radius: 1rem;
     padding: 1em;
     cursor: pointer;
 }
 
 .article-title {
-    font-size: clamp(1.3rem, 4vw, 2rem);
+    font-size: clamp(1.3rem, 4vw, 1.55rem);
+    padding: 0.3em 0;
+    margin: 0;
 }
 
 .article-desc {
-    font-size: clamp(1rem, 3vw, 1.2em)
+    font-size: clamp(1rem, 3vw, 1.2em);
+    margin: 0;
 }
 
 .year-divider {
@@ -342,3 +344,20 @@ article {
     text-align: center;
 }
 
+@media (min-width: 737px) {
+    .article-title {
+        font-size: clamp(1.3rem, 3vw, 1.55rem);
+    }
+}
+
+@media (min-width: 1096px) {
+    .article-title {
+        font-size: clamp(1.3rem, 2vw, 1.55rem);
+    }
+}
+
+@media (min-width: 1455px) {
+    .article-title {
+        font-size: clamp(1.3rem, 1.5vw, 1.55rem);
+    }
+}
