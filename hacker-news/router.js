@@ -1,14 +1,17 @@
 import articles from './pages/articles.js';
+import item from './pages/item.js';
+import favorites from './pages/favorites.js';
 
 
 export default class HashRouter {
     constructor() {
         this.routes = {
-            "/": () => articles(),
-            "/new": () => articles(),
-            "/ask": () => console.log("Ask route"),
-            "/show": () => console.log("Show route"),
-            "/favorites": () => console.log("Favorites route"),
+            "/": () => articles("/news"),
+            "/new": () => articles("/newest"),
+            "/ask": () => articles("/ask"),
+            "/show": () => articles("/show"),
+            "/item": (itemObj) => item(itemObj),
+            "/favorites": () => favorites(),
         };
         this.init();
     }
@@ -24,10 +27,14 @@ export default class HashRouter {
         const hash = window.location.hash.slice(1);
         this.currentPath = hash || '/';
         const route = this.routes[this.currentPath];
-        if (route) {
-        route();
+        if (this.currentPath.startsWith("/item?id=")) {
+            let articleId = this.currentPath.split("?id=")[1];
+            const itemRoute = this.routes["/item"];
+            itemRoute(articleId);
+        } else if (route) {
+            route();
         } else {
-        console.error(`No route found for ${this.currentPath}`);
+            console.error(`No route found for ${this.currentPath}`);
         }
     }
 

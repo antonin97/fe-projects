@@ -1,3 +1,4 @@
+
 const base = "https://node-hnapi.herokuapp.com";
 const root = document.querySelector("#content-container");
 
@@ -5,9 +6,8 @@ import Article from "../components/Article.js";
 import store from "../store.js";
 import { getIsFavorite } from "../utils.js";
 
-export default async function articlesFunc(path) {
-    const response = await fetch(`${base}${path}`);
-    const articles = await response.json();
+export default function favorites() {
+    const articles = store.getState();
 
     root.innerHTML = articles
         .map((article, index) =>
@@ -30,14 +30,13 @@ export default async function articlesFunc(path) {
     const favoriteButtons = document.querySelectorAll(".favorite");
 
     favoriteButtons.forEach((button) => {
-        button.addEventListener("click", async function() {
+        button.addEventListener("click", async function () {
             const article = JSON.parse(decodeURIComponent(button.dataset.item));
             store.dispatch({
                 type: article.isFavorite ? "REMOVE" : "ADD",
-                payload: {...article, isFavorite: !article.isFavorite},
+                payload: { ...article, isFavorite: !article.isFavorite },
             });
-            await articlesFunc(path);
+            favorites();
         });
-        
     });
 }
