@@ -19,13 +19,10 @@ closeButton.addEventListener("click", (e) => {
 });
 
 function openMenu() {
-    menu.classList.add("full-screen-menu-opened");
-    document.body.style.overflow = "hidden";
-}
+    menu.classList.add("full-screen-menu-opened");}
 
 function closeMenu() {
     menu.classList.remove("full-screen-menu-opened");
-    document.body.style.overflow = "visible";
 }
 
 document.querySelectorAll(".topic-icon").forEach((el) => {
