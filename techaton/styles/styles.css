@@ -305,7 +305,7 @@ li {
     margin-bottom: 6rem;
 }
 
-article {
+.article {
     border-radius: 1rem;
     padding: 1em;
     cursor: pointer;
@@ -410,7 +410,6 @@ footer {
   background: linear-gradient(120deg, var(--primary-color) 50%, white 50%);
   background-size: 250%;
   background-position: right;
-
   mask-repeat: no-repeat;
   mask-position: center;
   mask-size: contain;
@@ -530,6 +529,22 @@ footer {
     margin-bottom: 2rem
 }
 
-.current-article-wrapper > pre > .language-javascript{
-    font-family: 'Times New Roman', Times, serif;
+.current-article-wrapper > pre.language-javascript {
+    border-radius: 5px;
+    position: relative;
+    padding-left: 2em;
+}
+
+.current-article-wrapper > pre > code.language-javascript{
+    padding-left: 2em;
+    font-family: "Fira Code", monospace;
+}
+
+.clipboard-icon {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: background-position 220ms;
 }
