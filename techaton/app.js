@@ -41,6 +41,10 @@ document.querySelectorAll(".topic-icon").forEach((el) => {
     });
 });
 
+const currentYear = new Date().getFullYear();
+document.querySelector(".footer-year").innerText =
+    "2025" + (currentYear > 2025 ? ` - ${currentYear}` : "");
+
 // animation functions
 typeWriter()
 animateHover()
