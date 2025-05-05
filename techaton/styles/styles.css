@@ -18,7 +18,7 @@ body {
 
 :root {
     --bg-color: #282828;
-    --open-menu-color: black;
+    --open-menu-color: #222;
     --primary-color: #a226d0;
     --secondary-color: #741b94;
     --main-font-color: white;
@@ -145,7 +145,7 @@ li {
     }
 
     a {
-        width: 100%;
+        width: 100%
     }
 
     .burger-menu {
@@ -175,6 +175,11 @@ li {
 /* ---------------------
          MAIN 
 --------------------- */
+
+
+.article-link {
+    color: var(--main-font-color);
+}
 
 .main-article {
     border-radius: 1rem;
@@ -436,4 +441,95 @@ footer {
 
 .icon:hover {
   background-position: left;
+}
+
+/*----------------------------------------------------------------------------
+                            ARTICLE PAGE
+----------------------------------------------------------------------------*/
+
+
+
+/* ---------------------
+          HERO
+--------------------- */
+
+
+.current-article-hero {
+    display: flex;
+    position: relative;
+    margin: 2rem 0 5rem;
+}
+
+.current-article-title {
+    font-size: 5rem;
+    flex: 0 0 50%;
+    min-width: 0;
+    text-align: right;
+    padding: 0.5em 1em 0.5em 0;
+    position: relative;   
+}
+
+.current-article-title::after {
+    content: "";
+    position: absolute;
+    width: 5px;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: white;
+    transform: scaleY(0);
+    transform-origin: top;
+    animation: line-slide 500ms forwards;
+}
+
+.current-article-img {
+    position: absolute;
+    right: 0;
+    width: 50%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transform: translate(-100%);
+    clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
+    animation: clip-reveal 500ms forwards 500ms;
+}
+
+@keyframes line-slide {
+    100% { transform: scaleY(1); }
+}
+
+@keyframes clip-reveal {
+    100% {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); 
+        transform: translate(0%);
+    }
+}
+
+
+/* ---------------------
+          ARTICLE
+--------------------- */
+
+.current-article-wrapper {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.current-article-wrapper > p {
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+    line-height: 1.75;
+}
+
+.current-article-wrapper > h3 {
+    font-size: 2rem;
+    margin: 1rem 0;
+}
+
+.current-article-wrapper > hr {
+    margin-bottom: 2rem
+}
+
+.current-article-wrapper > pre > .language-javascript{
+    font-family: 'Times New Roman', Times, serif;
 }
