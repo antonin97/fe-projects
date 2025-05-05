@@ -144,10 +144,6 @@ li {
         background-color: initial;
     }
 
-    a {
-        width: 100%;
-    }
-
     .burger-menu {
         display: none;
     }
@@ -175,6 +171,11 @@ li {
 /* ---------------------
          MAIN 
 --------------------- */
+
+
+.article-link {
+    color: var(--main-font-color);
+}
 
 .main-article {
     border-radius: 1rem;
@@ -436,4 +437,71 @@ footer {
 
 .icon:hover {
   background-position: left;
+}
+
+/*----------------------------------------------------------------------------*/
+
+
+
+/* ---------------------
+       ARTICLE PAGE
+--------------------- */
+
+
+.current-article-hero {
+    display: flex;
+    position: relative;
+}
+
+.current-article-title {
+    font-size: 6rem;
+    flex: 0 0 50%;
+    min-width: 0;
+    text-align: right;
+    padding: 0.5em 1em 0.5em 0;
+    position: relative;
+    z-index: 3;
+    
+}
+
+.current-article-title::after {
+    content: "";
+    position: absolute;
+    width: 5px;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: white;
+    transform: scaleY(0);
+    transform-origin: top;
+    animation: line-slide 500ms forwards;
+}
+
+.current-article-img {
+    position: absolute;
+    right: 0;
+    width: 50%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    z-index: 1;
+    transform: translateX(-100%);
+    clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%); /* Start fully clipped to right */
+    animation: 
+        picture-slide 500ms forwards 500ms,
+        clip-reveal 500ms forwards 500ms;
+}
+
+@keyframes line-slide {
+    100% {
+        transform: scaleY(1);
+    }
+}
+
+@keyframes picture-slide {
+    100% { transform: translateX(0); }
+}
+
+@keyframes clip-reveal {
+    100% { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); }
 }

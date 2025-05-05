@@ -1,8 +1,9 @@
 import typeWriter from "./utils/typeWriter.js";
 import animateHover from "./utils/menuHover.js";
-const burgerButton = document.querySelector(".burger-menu")
-const closeButton = document.querySelector(".close-menu");
-const menu = document.querySelector(".full-screen-menu");
+
+const $burgerButton = document.querySelector(".burger-menu")
+const $closeButton = document.querySelector(".close-menu");
+const $menu = document.querySelector(".full-screen-menu");
 
 window.addEventListener("resize", () => {
     if (window.innerWidth > 950) {
@@ -10,19 +11,19 @@ window.addEventListener("resize", () => {
     }
 });
 
-burgerButton.addEventListener("click", (e) => {
+$burgerButton.addEventListener("click", (e) => {
     openMenu();
 })
 
-closeButton.addEventListener("click", (e) => {
+$closeButton.addEventListener("click", (e) => {
     closeMenu();
 });
 
 function openMenu() {
-    menu.classList.add("full-screen-menu-opened");}
+    $menu.classList.add("full-screen-menu-opened");}
 
 function closeMenu() {
-    menu.classList.remove("full-screen-menu-opened");
+    $menu.classList.remove("full-screen-menu-opened");
 }
 
 document.querySelectorAll(".topic-icon").forEach((el) => {
