@@ -18,7 +18,7 @@ body {
 
 :root {
     --bg-color: #282828;
-    --open-menu-color: black;
+    --open-menu-color: #222;
     --primary-color: #a226d0;
     --secondary-color: #741b94;
     --main-font-color: white;
@@ -142,6 +142,10 @@ li {
         position: initial;
         transform: none;
         background-color: initial;
+    }
+
+    a {
+        width: 100%
     }
 
     .burger-menu {
@@ -439,29 +443,30 @@ footer {
   background-position: left;
 }
 
-/*----------------------------------------------------------------------------*/
+/*----------------------------------------------------------------------------
+                            ARTICLE PAGE
+----------------------------------------------------------------------------*/
 
 
 
 /* ---------------------
-       ARTICLE PAGE
+          HERO
 --------------------- */
 
 
 .current-article-hero {
     display: flex;
     position: relative;
+    margin: 2rem 0 5rem;
 }
 
 .current-article-title {
-    font-size: 6rem;
+    font-size: 5rem;
     flex: 0 0 50%;
     min-width: 0;
     text-align: right;
     padding: 0.5em 1em 0.5em 0;
-    position: relative;
-    z-index: 3;
-    
+    position: relative;   
 }
 
 .current-article-title::after {
@@ -484,24 +489,47 @@ footer {
     height: 100%;
     object-fit: cover;
     object-position: center;
-    z-index: 1;
-    transform: translateX(-100%);
-    clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%); /* Start fully clipped to right */
-    animation: 
-        picture-slide 500ms forwards 500ms,
-        clip-reveal 500ms forwards 500ms;
+    transform: translate(-100%);
+    clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
+    animation: clip-reveal 500ms forwards 500ms;
 }
 
 @keyframes line-slide {
-    100% {
-        transform: scaleY(1);
-    }
-}
-
-@keyframes picture-slide {
-    100% { transform: translateX(0); }
+    100% { transform: scaleY(1); }
 }
 
 @keyframes clip-reveal {
-    100% { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); }
+    100% {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); 
+        transform: translate(0%);
+    }
+}
+
+
+/* ---------------------
+          ARTICLE
+--------------------- */
+
+.current-article-wrapper {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.current-article-wrapper > p {
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+    line-height: 1.75;
+}
+
+.current-article-wrapper > h3 {
+    font-size: 2rem;
+    margin: 1rem 0;
+}
+
+.current-article-wrapper > hr {
+    margin-bottom: 2rem
+}
+
+.current-article-wrapper > pre > .language-javascript{
+    font-family: 'Times New Roman', Times, serif;
 }
