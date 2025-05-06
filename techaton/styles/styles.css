@@ -512,6 +512,8 @@ footer {
 .current-article-wrapper {
     max-width: 800px;
     margin: 0 auto;
+    display: flex;
+    flex-direction: column;
 }
 
 .current-article-wrapper > p {
@@ -529,14 +531,29 @@ footer {
     margin-bottom: 2rem
 }
 
+
+/* ---------------------
+      CODE SNIPPETS
+--------------------- */
+
 .current-article-wrapper > pre.language-javascript {
     border-radius: 5px;
     position: relative;
-    padding-left: 2em;
+    padding: 2rem 2rem;
+    background: #3b3b3b;
+    background-image: radial-gradient(circle at calc(100% - 2rem - 0.6rem) calc(2rem + 0.8em), #3b3b3b 1%, #686767 2%, #3b3b3b 3%);
+    background-position: 100% 0%;
+    background-size: 10% 10%;
+    background-repeat: no-repeat;
+    transition: none
+}
+
+.current-article-wrapper > pre.language-javascript.clicked {
+    background-size: 9000% 9000%;
+    transition: background-size 1.2s;
 }
 
 .current-article-wrapper > pre > code.language-javascript{
-    padding-left: 2em;
     font-family: "Fira Code", monospace;
 }
 
@@ -546,5 +563,14 @@ footer {
     right: 2rem;
     font-size: 1.5rem;
     cursor: pointer;
-    transition: background-position 220ms;
+    transition: transform 200ms;
+}
+
+.clipboard-icon:hover {
+    transform: scale(1.15);
+}
+
+::selection, ::-moz-selection {
+  background: #5c5c5c; /* Red background */
+  color: #ffffff;      /* White text */
 }
