@@ -1,5 +1,7 @@
+
+import handleTopics from "../utils/topics.js";
+
 export default function mainPage() {
-    
     document.querySelector("#page-contents").innerHTML = `
             <a class="article-link" href="#/article">
                 <article class="main-article">
@@ -110,4 +112,6 @@ export default function mainPage() {
                 </article>
             </div>
 `;
+
+    handleTopics(); // topics click effect
 }

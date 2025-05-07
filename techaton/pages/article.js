@@ -1,3 +1,5 @@
+import handleClipboardIcons from "../utils/clipboard.js";
+
 export default function article() {
     document.querySelector("#page-contents").innerHTML = `
             <article class="current-article-container">
@@ -68,4 +70,7 @@ for (let i = 0; i <= 10; i++) {
                 
             </article>
 `;
+
+handleClipboardIcons(); // clipboard copy effect for code snippets
+Prism.highlightAll();
 }
