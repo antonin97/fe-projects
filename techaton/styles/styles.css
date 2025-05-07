@@ -509,26 +509,26 @@ footer {
           ARTICLE
 --------------------- */
 
-.current-article-wrapper {
+.current-article-content {
     max-width: 800px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
 }
 
-.current-article-wrapper > p {
+.current-article-content > p {
     font-size: 1.3rem;
-    margin-bottom: 2rem;
+    margin: 1rem 0;
     line-height: 1.75;
 }
 
-.current-article-wrapper > h3 {
+.current-article-content > h3 {
     font-size: 2rem;
-    margin: 1rem 0;
+    margin: 1rem 0 0;
 }
 
-.current-article-wrapper > hr {
-    margin-bottom: 2rem
+.current-article-content > hr {
+    margin: 1.5rem 0;
 }
 
 
@@ -536,10 +536,11 @@ footer {
       CODE SNIPPETS
 --------------------- */
 
-.current-article-wrapper > pre.language-javascript {
+.current-article-content > pre.language-javascript {
     border-radius: 5px;
     position: relative;
     padding: 2rem 2rem;
+    margin: 1rem 0;
     background: #3b3b3b;
     background-image: radial-gradient(circle at calc(100% - 2rem - 0.6rem) calc(2rem + 0.8em), #3b3b3b 1%, #686767 2%, #3b3b3b 3%);
     background-position: 100% 0%;
@@ -548,13 +549,17 @@ footer {
     transition: none
 }
 
-.current-article-wrapper > pre.language-javascript.clicked {
+.current-article-content > pre.language-javascript.clicked {
     background-size: 9000% 9000%;
     transition: background-size 1.2s;
 }
 
-.current-article-wrapper > pre > code.language-javascript{
+.current-article-content > pre > code.language-javascript{
     font-family: "Fira Code", monospace;
+}
+
+pre.language-javascript:hover > .clipboard-icon {
+    opacity: 1;
 }
 
 .clipboard-icon {
@@ -563,11 +568,16 @@ footer {
     right: 2rem;
     font-size: 1.5rem;
     cursor: pointer;
-    transition: transform 200ms;
+    opacity: 0;
+    transition: transform 200ms, opacity 300ms;
 }
 
 .clipboard-icon:hover {
     transform: scale(1.15);
+}
+
+.clipboard-icon:active {
+    transform: scale(0.9);
 }
 
 ::selection, ::-moz-selection {

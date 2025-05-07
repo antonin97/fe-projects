@@ -64,12 +64,6 @@ document.querySelectorAll(".clipboard-icon").forEach((element) =>
         }, 1100);
         navigator.clipboard
             .writeText(code)
-            .then(() => {
-                e.target.classList.add("copied");
-                setTimeout(() => {
-                    e.target.classList.remove("copied");
-                }, 2000);
-            })
             .catch((err) => {
                 console.error("Error copying text: ", err);
             });
