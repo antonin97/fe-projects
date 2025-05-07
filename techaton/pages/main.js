@@ -1,7 +1,7 @@
 export default function mainPage() {
     
     document.querySelector("#page-contents").innerHTML = `
-            <a class="article-link" href="./article.html">
+            <a class="article-link" href="#/article">
                 <article class="main-article">
                     <img class="main-article-img" src="./images/test-img.jpg" />
                     <h2 class="main-article-title">Max size div it is good ye</h2>

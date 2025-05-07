@@ -1,5 +1,5 @@
 import main from "./pages/main.js";
-import article from "./pages/main.js";
+import article from "./pages/article.js";
 
 export default class HashRouter {
     constructor() {
@@ -8,7 +8,7 @@ export default class HashRouter {
             "/": () => main(),
             "/about": () => main(),
             "/contact": () => main(),
-            //"/article": (articleId) => article(articleId),
+            "/article": (articleId) => article(articleId),
         };
 
         this.init();
