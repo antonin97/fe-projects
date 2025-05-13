@@ -10,7 +10,7 @@ html {
 }
 
 /* Ensure images are responsive and don’t overflow */
-img {
+img, picture, video, canvas, svg {
     max-width: 100%;
     display: block;
     height: auto;
@@ -18,12 +18,20 @@ img {
 
 /* Ensure body fills the viewport height */
 body {
-    min-height: 100vh;
+    min-height: 100svh;
+    -webkit-font-smoothing: antialiased;
 }
 
 /* Remove default inline behavior of iframes */
 iframe {
     display: block;
+}
+
+/* Allow keyword animations */ 
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    interpolate-size: allow-keywords;
+  }
 }
 
 /* Respect user preference for reduced motion */
@@ -42,6 +50,19 @@ ul, ol, dl, figure, pre, hr {
     margin: 0;
     padding: 0;
 }
+
+/* for too long words, wrapping hard */
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+p {
+  text-wrap: pretty;
+}
+h1, h2, h3, h4, h5, h6 {
+  text-wrap: balance;
+}
+
 
 /* Remove default padding and bullets from lists */
 ul, ol {

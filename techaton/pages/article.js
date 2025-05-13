@@ -5,7 +5,7 @@ export default function article() {
             <article class="current-article-container">
                 <div class="current-article-hero">
                     <h2 class="current-article-title">
-                        What is the best CSS preprocessor?
+                        The Best way to write CSS
                     </h2>
                     <img
                         class="current-article-img"
