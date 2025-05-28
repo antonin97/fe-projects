@@ -28,7 +28,7 @@ export default class HashRouter {
         if (this.currentPath.startsWith("/article?id=")) {
             let articleId = this.currentPath.split("?id=")[1];
             const articleRoute = this.routes["/article"];
-            article(articleId);
+            articleRoute(articleId);
         } else if (route) {
             route();
         } else {

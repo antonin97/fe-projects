@@ -1,6 +1,5 @@
 import handleClipboardIcons from "../utils/clipboard.js";
 import articles from "../data/articles.js";
-console.log("ARTICLE", articles.length)
 export default function article(articleId) {
     let article = articles.find(article => article.id === articleId);
 

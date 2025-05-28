@@ -5,11 +5,12 @@ import articles from "../data/articles.js";
 let allArticles = [...articles]
 const mainArticle = allArticles.shift();
 
-
+// getting first 15 words for the short description
 function getDesc(text) {
     return text.split(" ").slice(0, 15).join(" ") + "...";
 }
 
+// fetching the first article as the main article
 const mainArticleHTML = `
     <a class="article-link" href="#/article?id=${mainArticle.id}">
         <article class="main-article">
@@ -24,6 +25,7 @@ const mainArticleHTML = `
     </a>`;
 
 
+// topics bar
 const chooseTopics = `
 <section id="topics"class="topic-choose">
                 <h3 class="topic-title">Topics</h3>
@@ -48,18 +50,19 @@ const chooseTopics = `
             </section>
 `;
 
+// lists for iteration process
 let articlesByYear = [];
 let currentYearArticles = [];
 
+// year of the latest published article
 let currentListYear = new Date(Number(allArticles[0].timestamp)).getFullYear();
 
-
+// iterating, creating array of arrays
+//[[2025 articles], [2024 articles], ...]
 for (let element of allArticles) {
     let currentIterationYear = new Date(
         Number(element.timestamp)
     ).getFullYear();
-    console.log(currentIterationYear);
-
     if (currentIterationYear !== currentListYear) {
         articlesByYear.push(currentYearArticles);
         currentYearArticles = [element];
@@ -71,7 +74,7 @@ for (let element of allArticles) {
 articlesByYear.push(currentYearArticles);
 
 
-
+// mapping over the array and creating articles inside wrappers
 let articlesByYearHTML = articlesByYear
     .map((year) => {
         return `<div class="article-grid-wrapper">
@@ -96,11 +99,14 @@ let articlesByYearHTML = articlesByYear
     });
 
 
+
+
+// coining the final HTML by adding year dividers
+let articlesHTML = "";
+
 let currentYear = new Date(
     Number(articlesByYear[0][0].timestamp)
 ).getFullYear();
-
-let articlesHTML = "";
 
 for (let i = 0; i < articlesByYear.length; i++) {
     let currentListYear = new Date(Number(articlesByYear[i][0].timestamp)).getFullYear();
@@ -119,7 +125,7 @@ for (let i = 0; i < articlesByYear.length; i++) {
 
 
 
-
+// putting it all together
 export default function mainPage() {
     document.querySelector("#page-contents").innerHTML =
         mainArticleHTML +

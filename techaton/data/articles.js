@@ -1,3 +1,18 @@
+/*
+FORMAT
+
+{
+    title: string,
+    id: string,
+    heroImg: url,
+    heroImgAlt: string.
+    timestamp: number,
+    content: []
+}
+
+*/
+
+
 let articles = [
     {
         title: "This is just beginning",
