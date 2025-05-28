@@ -2,6 +2,7 @@ import typeWriter from "./utils/typeWriter.js";
 import animateHover from "./utils/menuHover.js";
 import handleMenu from "./utils/menu.js";
 import setFooterDate from "./utils/footer.js";
+import windowSizer from "./utils/windowSizer.js"
 
 import Router from "./router.js";
 class App {
@@ -15,6 +16,8 @@ class App {
         animateHover(); // navbar hover effect
         handleMenu(); // burger menu open/close/close on resize effect
         setFooterDate(); // set current year in footer
+
+        windowSizer() // dev only, TODO - delete
     }
 
 }
