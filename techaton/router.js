@@ -25,10 +25,10 @@ export default class HashRouter {
         const hash = window.location.hash.slice(1);
         this.currentPath = hash || "/";
         const route = this.routes[this.currentPath];
-        if (this.currentPath.startsWith("/item?id=")) {
+        if (this.currentPath.startsWith("/article?id=")) {
             let articleId = this.currentPath.split("?id=")[1];
-            const itemRoute = this.routes["/item"];
-            itemRoute(articleId);
+            const articleRoute = this.routes["/article"];
+            article(articleId);
         } else if (route) {
             route();
         } else {

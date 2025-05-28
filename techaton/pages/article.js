@@ -1,8 +1,8 @@
 import handleClipboardIcons from "../utils/clipboard.js";
 import articles from "../data/articles.js";
-
-export default function article() {
-    let article = articles[0];
+console.log("ARTICLE", articles.length)
+export default function article(articleId) {
+    let article = articles.find(article => article.id === articleId);
 
     // create hero img + title
     const heroHTML = `
