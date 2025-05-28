@@ -133,4 +133,15 @@ export default function mainPage() {
         articlesHTML;
 
     handleTopics(); // topics click effect
+    
+    document.querySelectorAll(".article-link").forEach((link) => {
+        console.log("ADDED")
+        link.addEventListener("click", function (e) {
+
+            setTimeout(() => window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            }), 1) // setting timeout because of Firefox bug
+        });
+    });
 }
